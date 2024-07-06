@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Графическое представление значений</title>
+        <style>
+            span.att {
+                color:red
+            }
+            span.tag {
+                color:blue
+            }
+            span.zna {
+                color:violet
+            }
+        </style>
+    </head>
+    <body style='font-family:Verdana, Geneva, Tahoma, sans-serif'>
+        <h1>Графическое представление значений</h1>
+        <h2>Тег <var>&lt;meter&gt;</var></h2>
+        <p>Элемент <dfn style='color:blue'>&lt;meter&gt;</dfn>&mdash; предназначен для отображения скалярной величины в заданном диапазоне или же для графического представления дробного числа. Для использования данного тега должно быть известно максимальное значение.</p>
+        <p>Атрибуты, которые необходимо использовать совместно с тегом:</p>
+        <table style='border:1px #00b444  solid '; border='1'>
+            <colgroup>
+                <col style="background-color:#f00">
+                <col style="background-color:#942494">
+            </colgroup>
+            <tr style='color:chartreuse'>
+                <th>Атрибут</th><th>Значение</th><th>Описание</th>
+            </tr>
+            <tr>
+                <td>min</td><td>number</td><td>Атрибут обозначает минимально допустимоезначение.<b>Значение по умолчанию ноль.</b></td>
+            </tr>
+            <tr>
+                <td>max</td><td>number</td><td>Атрибут обозначает максимально возможное значени. <b>Значение по умолчанию один. Если макс. значение задано меньшим чем минимальное, то они меняются местами.</b></td>
+            </tr>
+            <tr>
+                <td>low</td><td>number</td><td>Атрибут определяет низкие значения (но не минимальные). Это значение должно быть меньше чем <i style='color:red'>high</i>.Если указывается значение <i style='color:red'>low</i> меньше, чем значение <i style='color:red'>min</i>, то <i style='color:red'>low</i>=<i style='color:red'>min</i>.</td>
+            </tr>
+            <tr>
+                <td>high</td><td>number</td><td>Атрибут отделяет высокие значения (но не максимальные). Если значение <i style='color:red'>high</i> меньше, чем значение <i style='color:red'>low</i>, то <i style='color:red'>high</i>=<i style='color:red'>low</i>. Если <i style='color:red'>high</i> задано большим, чем <i style='color:red'>max</i>, то <i style='color:red'>high</i>=<i style='color:red'>max</i></td>
+            </tr>
+            <tr>
+                <td>optimum</td><td>number</td><td>Атрибут обозначает оптимальное значение и должен находиться в пределах от <i style='color:red'>min</i> до <i style='color:red'>max</i>. Оно может быть большим, чем значение <i style='color:red'>high</i><br><br>Цвет зависит от расположения <i style='color:red'>optimum</i>:<br>
+                красный:<i style='color:red'>min</i>&le;<i style='color:red'>optimum</i>&lt;<i style='color:red'>low</i><br>
+                жёлтый:<i style='color:red'>low</i>&le;<i style='color:red'>optimim</i>&le;<i style='color:red'>high</i><br>
+                зелёный:<i style='color:red'>high</i>&lt;<i style='color:red'>optimum</i>&le;<i style='color:red'>max</i></td>
+            </tr>
+            <tr>
+                <td>value</td><td>number</td><td>Определяет текущее значение. <b>Является обязательным атрбитум.</b></td>
+            </tr>       
+        </table><br>
+        <p>Пример использования тега <dfn style='color:blue'>&lt;meter&gt;</dfn>:</p>
+        <pre style='border:2px #0bc4c1 solid'><span class="tag">&lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+                &lt;head&gt; 
+                    &lt;title&gt;</span>Пример использование тега &lt;meter&gt;<span class="tag">&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;p&gt;</span>Заряд батареи<span class="tag">&lt;/p&gt;
+                    &lt;meter</span> <span class="att">value = </span><span class="zna">"10"</span> <span class="att">min = </span><span class="zna">"0" </span><span class="att">max = </span><span class="zna">"100" </span><span class="att">low = </span><span class="zna">"20"</span> <span class="att">high = </span><span class="zna">"80"</span> <span class="att">optimum = </span><span class="zna">"90"</span><span class="tag">&gt;</span>10 из 100<span class="tag">&lt;/meter&gt; &lt;br&gt;
+                    &lt;meter</span> <span class="att">value = </span><span class="zna">"20" </span><span class="att">min = </span><span class="zna">"0" </span><span class="att">max = </span><span class="zna">"100" </span><span class="att">low = </span><span class="zna">"20" </span><span class="att">high = </span><span class="zna">"80"</span> <span class="att">optimum = </span><span class="zna">"90"</span><span class="tag">&gt;</span>20 из 100<span class="tag">&lt;/meter&gt; &lt;br&gt;
+                    &lt;meter</span> <span class="att">value = </span><span class="zna">"30" </span><span class="att">min = </span><span class="zna">"0"</span> <span class="att">max = </span><span class="zna">"100" </span><span class="att">low = </span><span class="zna">"20"</span> <span class="att">high = </span><span class="zna">"80"</span> <span class="att">optimum = </span><span class="zna">"90"</span><span class="tag">&gt;</span>30 из 100<span class="tag">&lt;/meter&gt; &lt;br&gt;
+                    &lt;meter</span> <span class="att">value = </span><span class="zna">"40"</span> <span class="att">min = </span><span class="zna">"0" </span><span class="att">max = </span><span class="zna">"100"</span> <span class="att">low = </span><span class="zna">"20" </span><span class="att">high = </span><span class="zna">"80"</span> <span class="att">optimum = </span><span class="zna">"90"</span><span class="tag">&gt;</span>40 из 100<span class="tag">&lt;/meter&gt; &lt;br&gt;
+                    &lt;meter</span> <span class="att">value = </span><span class="zna">"50"</span> <span class="att">min = </span><span class="zna">"0"</span> <span class="att">max = </span><span class="zna">"100"</span> <span class="att">low = </span><span class="zna">"20"</span> <span class="att">high = </span><span class="zna">"80"</span> <span class="att">optimum = </span><span class="zna">"90"</span><span class="tag">&gt;</span>50 из 100<span class="tag">&lt;/meter&gt; &lt;br&gt;
+                    &lt;meter</span> <span class="att">value = </span><span class="zna">"60"</span> <span class="att">min = </span><span class="zna">"0"</span> <span class="att">max = </span><span class="zna">"100"</span> <span class="att">low = </span><span class="zna">"20"</span> <span class="att">high = </span><span class="zna">"80"</span> <span class="att">optimum = </span><span class="zna">"90"</span><span class="tag">&gt;</span>60 из 100<span class="tag">&lt;/meter&gt; &lt;br&gt;
+                    &lt;meter </span><span class="att">value = </span><span class="zna">"70"</span> <span class="att">min = </span><span class="zna">"0"</span> <span class="att">max = </span><span class="zna">"100" </span><span class="att">low = </span><span class="zna">"20"</span> <span class="att">high = </span><span class="zna">"80"</span> <span class="att">optimum = </span><span class="zna">"90"</span><span class="tag">&gt;</span>70 из 100<span class="tag">&lt;/meter&gt; &lt;br&gt;
+                    &lt;meter</span> <span class="att">value = </span><span class="zna">"80"</span> <span class="att">min = </span><span class="zna">"0"</span> <span class="att">max = </span><span class="zna">"100"</span> <span class="att">low = </span><span class="zna">"20"</span> <span class="att">high = </span><span class="zna">"80"</span> <span class="att">optimum = </span><span class="zna">"90"</span><span class="tag">&gt;</span>80 из 100<span class="tag">&lt;/meter&gt; &lt;br&gt;
+                    &lt;meter </span><span class="att">value = </span><span class="zna">"90"</span> <span class="att">min = </span><span class="zna">"0"</span> <span class="att">max = </span><span class="zna">"100"</span> <span class="att">low = </span><span class="zna">"20"</span> <span class="att">high = </span><span class="zna">"80"</span> <span class="att">optimum = </span><span class="zna">"90"</span><span class="tag">&gt;</span>90 из 100<span class="tag">&lt;/meter&gt; &lt;br&gt;
+                    &lt;meter</span> <span class="att">value = </span><span class="zna">"100"</span> <span class="att">min = </span><span class="zna">"0"</span> <span class="att">max = </span><span class="zna">"100"</span> <span class="att">low = </span><span class="zna">"20"</span> <span class="att">high = </span><span class="zna">"80"</span> <span class="att">optimum = </span><span class="zna">"90"</span><span class="tag">&gt;</span>100 из 100<span class="tag">&lt;/meter&gt;
+                &lt;/body&gt;
+            &lt;/html&gt;</span>
+            </pre>
+        <img src='../img/30.png'>
+        <h2>Тег <var>&lt;progress&gt;</h2></var>
+        <p><span class='tag'>&lt;progress&gt;</span> - предоставляет обратную связь пользователю, сообщая о состоянии текущего процесса. Элемент отображает какая часть задачи уже выполнена.</p>
+        <p>У тега <span class='tag'>&lt;progress&gt;</span> используется два основных атрибута это <span class='att'>max</span>, который определяет общий объём текущего процесса (его значение должно быть положительным) и <span class='att'>value</span>, который указывает уже выполненную часть. <b>Данный тег не поддерживается браузером Internet Explorer версии 9 и ниже.</b></p>
+        <pre style='border:1px #0bc4c1 solid'><span class="tag">&lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+                &lt;head&gt;
+                    &lt;title&gt;</span>Пример использование элемента &lt;progress&gt; в HTML<span class="tag">&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;p&gt;</span>Изучено материала:<span class="tag">&lt;/p&gt;
+                    &lt;progress </span><span class="att">value = </span><span class="zna">"25"</span> <span class="att">max = </span><span class="zna">"100"</span><span class="tag">&gt; &lt;/progress&gt;
+                &lt;/body&gt;
+            &lt;/html&gt;</span>
+            </pre>
+            <br><iframe name='dikensoN' width='400' height='100' src='https://basicweb.ru/html/primer/31.php'></iframe>
+            <p>@ В следующем примере используются элементы <span class='tag'>&lt;progress&gt;</span> только с одним атрибутом <span class='att'>value</span>, важным моментом в этом случае является использование значений между <b>0 и 1</b>:</p>
+            <pre style='border:1px #0bc4c1 solid'><span class="tag">&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;</span>Пример использования атрибута value HTML тега &lt;progress&gt;<span class="tag">&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                         </span>0.3 - <span class="tag">&lt;progress </span><span class="att">value = </span><span class="zna">"0.3"</span> <span class="tag">&gt;&lt;/progress&gt;&lt;/br&gt;
+                         </span>0.5 - <span class="tag">&lt;progress </span><span class="att">value = </span><span class="zna">"0.5"</span> <span class="tag">&gt;&lt;/progress&gt;&lt;/br&gt;
+                         </span>0.7 - <span class="tag">&lt;progress </span><span class="att">value = </span><span class="zna">"0.7"</span> <span class="tag">&gt;&lt;/progress&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;</span>
+                </pre>
+                <p>Результат:</p>
+                <iframe name='ddd' width='400' height='80' src='https://basicweb.ru/html/primer/31a.php'></iframe>
+                <br><br><p>@ Если для элемента <span class='tag'>&lt;progress&gt;</span> не указывать атрибут <span class='att'>value</span>, то большинство браузеров будут отображать анимацию:</p>
+                <br><progress></progress>
+    </body>
+</html>

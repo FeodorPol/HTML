@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Форма оформления заказа</title>
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend>Оформление заказа</legend>
+                <p><b>Введите контактные данные и адрес доставки:</b></p>
+                Контактное лицо:<input type='text' name='firstname' placeholder='Введите имя и фамилию'> Ваш адрес:<input type='text' name='adres' placeholder='Введите ваш адрес'><br><br>
+                Телефон:<input type='tel' name='telephone' placeholder='Введите ваш телефон'> E-mail:<input type='email' name='e-mail' placeholder='ваш e-mail'>
+                <p><b>Выберите дату и время доставки:</b></p>
+                Дата доставки:<input type='date' neme='date'> Время доставки:<input type='time' name='time'>
+                <p><b>Оплата:</b></p>
+                <label for='cash'><input type='radio' id='cash' name='choice' value='cash' checked>Наличными</label>
+                <label for='card'><input type='radio' id='card' name='choice' value='card'>По карте</label><br><br>
+                <p><b>Прочие параметры:</b></p>
+                <label for='domph'><input type='checkbox' id='domph' name='type1' value='have'>Домофон</label> <label for='non-bell'><input type='checkbox' id='non-bell' name='type2' value='no signal'> Неисправный звонок</label> 
+                <label for='dog'><input type='checkbox' id='dog' name='type3' value='dog'> Собака во дворе</label> 
+                <label for='back-door'><input type='checkbox' id='back-door' name='type4' value='back-door'> Вход с заднего фасада</label> 
+                <label for='front-door'><input type='checkbox' id='front-door' name='front' value='+'> Вход с торца здания</label><br><br>
+                <input type='submit' name='submit' value='Подтвердить'>
+            </fieldset>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Теги разметки страницы</title>
+    <style>
+        span.tag {
+            color:blue
+        } 
+        span.att {
+            color:red
+        }
+        span.zna {
+            color:purple
+        }
+        span.com {
+            color:green
+        }
+        hr {
+            border:1px dotted #fed93f
+        }
+        pre {
+            background-color: #e8e8ff;
+            border: 2px #01647b solid;
+         }
+         h3 { 
+            color:gray
+         }
+    </style>
+</head>
+<body style='font-family:Verdana, Geneva, Tahoma, sans-serif'>
+    <h1 style='text-align:center'>Теги разметки страницы</h1>
+    <p>Теги <span class='tag'>&lt;div&gt;</span> и <span class='tag'>&lt;span&gt;</span> представляют из себя универсальные пустые контейнеры, которые необходимо заполнить каким-либо содержанием, либо сгруппировать вложенные элементы для их дальнейшей стилизации средствами <i>CSS</i>, и при необходимости динамически манипулировать ими с использованием скриптов, например, на таком языке программирования, как <i>Javascript.</i></p>
+    <p>Тег <span class='tag'>&lt;div&gt;</span> определяет любой отдельный блок содержимого и предназначен для <b>деления веб-страницы на фрагменты.</b></p>
+    <p>Этот элемент является блочным &mdash; означает, что его содержимое всегда будет начинаться с новой строки, при этом элемент занимает всю доступную ширину.</p>
+    <p>В отличии от блочного элемента <span class='tag'>&lt;div&gt;</span> тег <span class='tag'>&lt;span&gt;</span> является строчным и применяется к внутренним (inline) элементам страницы, то есть к словам, фразам, которые находятся в пределах абзаца или небольшого фрагмента текста, оглавления и т.п..</p>
+    <pre><span class="tag">&lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+            &lt;head&gt;
+                &lt;title&gt;</span>Теги &lt;div&gt; и &lt;span&gt;<span class="tag">&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;div <span class="att">style = </span><span class="zna">"color:green"</span>&gt;
+                    &lt;p&gt;</span>Абзацы мы объединили тегом &amp;lt;div&amp;gt;, а это <span class="tag">&lt;span <span class="att">style = </span><span class="zna">"color:red"</span>&gt;</span>слово<span class="tag">&lt;/span&gt;</span> мы заключили тегом &amp;lt;span&amp;gt;.<span class="tag">&lt;/p&gt;
+                    &lt;p&gt;</span>С помощью встроенной таблицы стилей мы выделили это слово красным цветом, а блок текста получил зеленый цвет.<span class="tag">&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div <span class="att">style = </span><span class="zna">"background-color:khaki"</span>&gt;
+                    &lt;p&gt;</span>Обратите внимание, что тег &amp;lt;div&amp;gt; является блочным и это означает, что его содержимое всегда будет начинаться с новой строки, при этом элемент занимает всю доступную ширину.<span class="tag">&lt;/p&gt;
+                    &lt;p&gt;</span>Этот блок тоже содержит два абзаца. С помощью встроенной таблицы стилей мы указали для всего блока цвет заднего фона - khaki, а для этога <span class="tag">&lt;span <span class="att">style = </span><span class="zna">"background-color:orangered"</span>&gt;</span>слова<span class="tag">&lt;/span&gt;</span> orangeRed (мы заключили его в тег &amp;lt;span&amp;gt;).<span class="tag">&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;</span>
+        </pre>
+    <iframe src="https://basicweb.ru/html/primer/42.php" width='600' height='250'></iframe>
+    <h2>Теги разметки страницы в HTML 5</h2>
+    <img src="../img/43.jpg" alt="lflf">
+    <h3>Тег &lt;header&gt;</h3>
+    <p>Тег <span class='tag'>&lt;header&gt;</span>(верхний колонтитул) является признаком верзнего колонтитула или баннера верхней части страницы, которая обчно содержит логотип (иконка), навигацию и т.д.. Допускается размещать несколько элементов <span class='tag'>&lt;header&gt;</span> в одном документе.</p>
+    <pre><span class="tag">&lt;header&gt;
+		&lt;img <span class="att">src = </span><span class="zna">"logo.png"</span> <span class="att">alt = </span><span class="zna">"logo"</span>&gt; <span class="com">&lt;!-- изображение с логотипом --&gt;</span>
+		&lt;h1&gt;</span>Заголовок первого уровня<span class="tag">&lt;/h1&gt; <span class="com">&lt;!-- заголовок первого уровня --&gt;</span>
+        &lt;/header&gt;</span>
+        </pre>
+    <img src="../img/43a.png" alt="tea">
+    <hr>
+    <p>Запрещается помещать элемент <span class='tag'>&lt;header&gt;</span> внутрь таких элементов, как <span class='tag'>&lt;footer&gt;</span> (нижний колонтитул), <span class='tag'>&lt;adress&gt;</span> (определяет контактную информацию) или внутрь другого элемента <span class='tag'>&lt;header&gt;</span>.</p>
+    <hr>
+    <h3>Тег &lt;nav&gt;</h3>
+    <p>Тег <span class='tag'>&lt;nav&gt;</span>(навигация) для обозначения содержимого в виде основных навигационных ссылок. Документ может иметь несколько элементов <span class='tag'>&lt;nav&gt;</span>, например, один для навигации по сайту, а второй для навигации по странице.</p>
+    <pre><span class="tag">&lt;nav&gt; <span class="com">&lt;!-- начало навигации --&gt;</span>
+        &lt;ul&gt; <span class="com">&lt;!-- маркированный список --&gt;</span>
+            &lt;li&gt;&lt;a <span class="att">href = </span><span class="zna">"#"</span>&gt;</span>Домой<span class="tag">&lt;/a&gt;&lt;/li&gt; <span class="com">&lt;!-- ссылка в элементе списка --&gt;</span>
+            &lt;li&gt;&lt;a <span class="att">href = </span><span class="zna">"#"</span>&gt;</span>HTML<span class="tag">&lt;/a&gt;&lt;/li&gt; <span class="com">&lt;!-- ссылка в элементе списка --&gt;</span>
+            &lt;li&gt;&lt;a <span class="att">href = </span><span class="zna">"#"</span>&gt;</span>CSS<span class="tag">&lt;/a&gt;&lt;/li&gt; <span class="com">&lt;!-- ссылка в элементе списка --&gt;</span>
+        &lt;/ul&gt; <span class="com">&lt;!--конец списка--&gt;</span>
+    &lt;/nav&gt;</span> <span class="com">&lt;!-- конец навигации --&gt;</span>
+    </pre>
+    <img src="../img/43b.png" alt="dfdf">
+    <hr>
+    <p>Не использовать элемент <span class='tag'>&lt;nav&gt;</span> внутри тега <span class='tag'>&lt;footer&gt;</span> (нижний колонтитул).</p>
+    <hr>
+    <h3>Тег &lt;aside&gt;</h3>
+    <p>Тег <span class='tag'>&lt;aside&gt;</span> (отступление) предназначен для обозначения содержимого, относящегося к окружающему этот тег содержимому. Элемент <span class='tag'>&lt;aside&gt;</span> представляет собой раздел страницы с контентом, который может рассматриваться отдельно от основного содержания. В этих разделаъх часто размещаются бовковые колонки, рекламный контент, биографические данные и т.д..</p>
+    <pre><span class="tag">&lt;article&gt; <span class="com">&lt;!-- начало статьи --&gt;</span>
+        &lt;p&gt;</span>Сегодня мы с семьей пересматривали фильм "Один дома 2"...<span class="tag">&lt;/p&gt;
+            &lt;aside&gt; <span class="com">&lt;!-- отступление (выносим информацию, например, на поля) --&gt;</span>
+                &lt;p&gt;</span>В одной из сцен фильма снялся будущий президент <span class="tag">&lt;abbr <span class="att">title = </span><span class="zna">"Соединенные штаты Америки"</span>&gt;</span>США<span class="tag">&lt;/abbr&gt;</span> - <span class="tag">&lt;i&gt;</span><i>Дональд Трамп</i><span class="tag">&lt;/i&gt;&lt;/p&gt;
+            &lt;/aside&gt; 
+    &lt;/article&gt;</span> <span class="com">&lt;!-- конец статьи --&gt;</span>
+    </pre>
+    <img src="../img/43c.png" alt="dfdfff">
+    <h3>Тег &lt;article&gt;</h3>
+    <p>Тег <span class='tag'>&lt;article&gt;</span> (статья) применяется для обозначения раздела страницы, содержащего завершенную, независимую композицию. Данный элемент может содержать в себе такую инфу как запись блога, товар в интернет-магазине, основной текст страницы и т.д..</p>
+    <p>Элемент должен иметь в качестве дочернего (вложеннного) элемента заголовок от <span class='tag'>&lt;h2&gt;</span> до <span class='tag'>&lt;h6&gt;</span> (если до этого не использовался <span class='tag'>&lt;h1&gt;</span>, то допускается его разовое размещение). Внутри тега <span class='tag'>&lt;article&gt;</span> могут содержаться другие одноименные элементы с близким по смыслу содержимым.</p>
+    <pre><span class="tag">&lt;article&gt; <span class="com">&lt;!-- начало основной статьи --&gt;</span>
+        &lt;h1&gt;</span>Статьи о птицах<span class="tag">&lt;/h1&gt;<span class="com">&lt;!-- заголовок первого уровня (если был использован в документе, то h2, а во вложенных h3) --&gt;</span>
+        &lt;p&gt;</span>Вводная информация о птицах...<span class="tag">&lt;/p&gt;
+        &lt;article&gt; <span class="com">&lt;!-- начало первой вложенной статьи --&gt;</span>
+            &lt;h2&gt;</span>Статья о воробье<span class="tag">&lt;/h2&gt; 
+            &lt;p&gt;</span>Информация про воробьев...<span class="tag">&lt;/p&gt;
+        &lt;/article&gt;</span> <span class="com">&lt;!-- конец первой вложенной статьи --&gt;</span>
+        <span class="tag">&lt;article&gt; <span class="com">&lt;!-- начало второй вложенной статьи --&gt;</span>
+            &lt;h2&gt;</span>Статья о синице<span class="tag">&lt;/h2&gt;
+            &lt;p&gt;</span>Информация про синиц...<span class="tag">&lt;/p&gt;
+        &lt;/article&gt;<span class="com">&lt;!-- конец второй вложенной статьи --&gt;</span>
+    &lt;/article&gt;</span> <span class="com">&lt;!-- конец основной статьи --&gt;</span>
+    </pre>
+    <img src="../img/43d.png" alt="dfg">
+    <h3>Тег &lt;section&gt;</h3>
+    <p>Тег <span class='tag'>&lt;section&gt;</span> (раздел) служит для группировки взаимосвязанного содержимого.</p>
+    <p>Раздел должен логически отображать структуру документа , например, вы можетет разбить содержимое главной страницы на три раздела: вводную информацию о сайте, контактную информацию и самые последние новости.</p>
+    <hr>
+    <p>Данный тег часто используется при верстке целевых страниц ( англ. <b>landing page</b>, <i>"посадочная страница"</i>) для логического разделения страницы на разделы.</p>
+    <hr>
+    <p>Элемент должен иметь в качестве дочернего (вложенного) элемента заголовок от &lt;h2&gt; до &lt;h6&gt; (если до этого не использовался &lt;h1&gt;, то допускается его разовое размещение).</p>
+    <pre><span class="tag">&lt;section&gt; <span class="com">&lt;!-- начало первой вложенной статьи --&gt;</span>
+        &lt;h2&gt;</span>Первый раздел<span class="tag">&lt;/h2&gt; 
+        &lt;p&gt;</span>Информация внутри раздела<span class="tag">&lt;/p&gt;
+    &lt;/section&gt;</span> <span class="com">&lt;!-- конец первой вложенной статьи --&gt;</span>
+    <span class="tag">&lt;section&gt; <span class="com">&lt;!-- начало второй вложенной статьи --&gt;</span>
+        &lt;h2&gt;</span>Второй раздел<span class="tag">&lt;/h2&gt;
+        &lt;p&gt;</span>Информация внутри раздела<span class="tag">&lt;/p&gt;
+    &lt;/section&gt;<span class="com">&lt;!-- конец второй вложенной статьи --&gt;</span>
+    </span>
+    </pre>
+    <img src="../img/43e.png" alt="dfdfdfdfd">
+    <h3>Совместное использование тегов &lt;section&gt; и &lt;article&gt;</h3>
+    <p>Обратите внимание, что допускается в качестве дочернего (вложенного) элемента тега <span class='tag'>&lt;article&gt;</span> использовать тег <span class='tag'>&lt;stction&gt;</span> (раздел), как бы разбивая по смыслу содержимое. (от <span class='tag'>&lt;h2&gt;</span> до <span class='tag'>&lt;h6&gt;</span>)</p>
+    <img src="../img/43f.png" alt="dfdvbg">
+    <p>Можно и наоборот.</p>
+    <img src="../img/43g.png" alt="asddt">
+    <p>Допускается помещать элементы <span class='tag'>&lt;section&gt;</span> (раздел) в другие элементы <span class='tag'>&lt;section&gt;</span>, но при этом рекомендуется учитывать следующую структуру документа:</p>
+    <pre><span class="tag">&lt;body&gt;
+        &lt;h1&gt;</span>Заголовок первого уровня<span class="tag">&lt;/h1&gt;
+        &lt;section&gt;
+            &lt;h2&gt;</span>Заголовок второго уровня<span class="tag">&lt;/h2&gt;
+            &lt;section&gt;
+                &lt;h3&gt;</span>Заголовок третьего уровня<span class="tag">&lt;/h3&gt; 
+            &lt;/section&gt;
+        &lt;/section&gt;
+    </span>
+    </pre>
+    <h3>Тег &lt;footer&gt;</h3>
+    <p>Тег <span class='tag'>&lt;footer&gt;</span> (нижний колонтитул) содержит информацию, которая обычно помещается в нижнем колонтитуле страницы, например свведения об авторских правах, другую информацию, некоторые ссылки для навигации по сайту и тому подобное.</p>
+    <p>На кол-во тегов <span class='tag'>&lt;footer&gt;</span> на одной странице ограничений не накладывается. Можно, например, поместить нижний колонтитул внутри тега <span class='tag'>&lt;article&gt;</span>, чтобы хранить в нем информацию, относящуюся к статье, например сноски, ссылеи или выписки.</p>
+    <pre><span class="tag">&lt;body&gt;
+        &lt;h1&gt;</span>Важный заголовок<span class="tag">&lt;/h1&gt; 
+        &lt;article&gt; <span class="com">&lt;!-- начало первой статьи --&gt;</span>
+            &lt;h2&gt;</span>Статья о бытие<span class="tag">&lt;/h2&gt; 
+            &lt;p&gt;</span>Информация про бытие...<span class="tag">&lt;/p&gt;
+            &lt;footer&gt;</span>Сноски, ссылки и тому подобное <span class="com">&lt;!-- "подвал" статьи --&gt;</span>
+                <span class="tag">&lt;address&gt;</span>Информация об авторе статьи<span class="tag">&lt;/address&gt;
+            &lt;/footer&gt;
+        &lt;/article&gt;<span class="com">&lt;!-- конец первой статьи --&gt;</span>
+        &lt;article&gt; <span class="com">&lt;!-- начало второй статьи --&gt;</span>
+            &lt;h2&gt;</span>Статья о бытие 2<span class="tag">&lt;/h2&gt; 
+            &lt;p&gt;</span>Информация про бытие 2...<span class="tag">&lt;/p&gt;
+            &lt;footer&gt;</span>Сноски, ссылки и тому подобное <span class="com">&lt;!-- "подвал" статьи --&gt;</span>
+                <span class="tag">&lt;address&gt;</span>Информация об авторе статьи<span class="tag">&lt;/address&gt;
+            &lt;/footer&gt;
+        &lt;/article&gt; <span class="com">&lt;!-- конец второй статьи --&gt;</span>
+        &lt;footer&gt;</span>сведения об авторских правах, навигация по сайту, счетчики... <span class="com">&lt;!-- "подвал" сайта --&gt;</span>
+            <span class="tag">&lt;address&gt;</span>Контактные данные автора сайта<span class="tag">&lt;/address&gt;
+        &lt;/footer&gt;
+    &lt;/body&gt;</span>
+    </pre>
+    <img src="../img/43h.png" alt="dfvbhj">
+    <h3>Тег &lt;main&gt;</h3>
+    <p>Тег <span class='tag'>&lt;main&gt;</span> предназначен для основного содержимого документа (основной контент). Контент внутри элемента должен быть уникальным для всего документа и не дожен содержать элементы, которые повторяются в различных документах . Допускается использовать элемента только один раз в одном документе.</p>
+    <img src="../img/43i.png" alt="awern">
+    <hr>
+    <p>Обращаю ваше внимание, что тег <span class='tag'>&lt;main&gt;</span> не должен быть потомком таких блоков, как (не должен быть вложен в них):</p>
+    <ul>
+        <li><span class='tag'>&lt;nav&gt;</span>(навигация).</li>
+        <li><span class='tag'>&lt;header&gt;</span>(верхний колонтитул).</li>
+        <li><span class='tag'>&lt;footer&gt;</span>(нижний колонтитул).</li>
+        <li><span class='tag'>&lt;aside&gt;</span>(отступление).</li>
+        <li><span class='tag'>&lt;article&gt;</span>(статья).</li>
+    </ul>
+    <hr>
+    <h2>Разметка для сайта на HTML 5</h2>
+    <p>Простая разметка для сайта по современным стандартам гипертекстовой разметки HTML 5.</p>
+    <pre><span class="tag">&lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+            &lt;head&gt;
+                &lt;title&gt;</span>Разметка страницы<span class="tag">&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;header <span class="att">style = </span><span class="zna">"background-color:khaki; height:100px"</span>&gt;
+                    &lt;p&gt;</span>Верхний колонтитул (тег &lt;header&gt;)<span class="tag">&lt;/p&gt;
+                &lt;/header&gt;
+                &lt;nav <span class="att">style = </span><span class="zna">"background-color:coral; height:75px"</span>&gt;
+                    &lt;a <span class="att">href = </span><span class="zna">"#"&gt;</span></span>Ссылка 1<span class="tag">&lt;/a&gt;</span> |<span class="tag">
+                    &lt;a <span class="att">href = </span><span class="zna">"#"&gt;</span></span>Ссылка 2<span class="tag">&lt;/a&gt;</span> |<span class="tag">
+                    &lt;a <span class="att">href = </span><span class="zna">"#"&gt;</span></span>Ссылка 3<span class="tag">&lt;/a&gt;</span> |<span class="tag">
+                &lt;p&gt;</span>Панель навигации (тег &lt;nav&gt;)<span class="tag">&lt;/p&gt;
+                &lt;/nav&gt;
+                &lt;aside <span class="att">style  = </span><span class="zna">"float:right; width:200px; height:250px; background-color:tan"</span>&gt;
+                    &lt;p&gt;</span>Справа мы разместили тег &lt;aside&gt;<span class="tag">&lt;/p&gt;
+                &lt;/aside&gt;
+                &lt;main <span class="att">style = </span><span class="zna">"height:250px"</span>&gt;
+                    &lt;h1&gt;</span>Главный заголовок сайта<span class="tag">&lt;/h1&gt;
+                    &lt;p&gt;</span>Основное содержимое (тег &lt;main&gt;)<span class="tag">&lt;/p&gt;
+                    &lt;section <span class="att">style = </span><span class="zna">"background-color:grey; height:75px"</span>&gt;
+                        &lt;h2&gt;</span>Заголовок второго уровня<span class="tag">&lt;/h2&gt;
+                        &lt;p&gt;</span>Раздел 1 (тег &lt;section&gt;)<span class="tag">&lt;/p&gt;
+                    &lt;/section&gt;
+                    &lt;section <span class="att">style = </span><span class="zna">"background-color:grey; height:75px"</span>&gt;
+                        &lt;h2&gt;</span>Заголовок второго уровня<span class="tag">&lt;/h2&gt;
+                        &lt;p&gt;</span>Раздел 2 (тег &lt;section&gt;)<span class="tag">&lt;/p&gt;
+                    &lt;/section&gt;
+                &lt;/main&gt;
+                &lt;footer <span class="att">style = </span><span class="zna">"background-color:khaki; height:80px"</span>&gt;
+                    &lt;p&gt;</span>Нижний колонтитул (подвал) тег &lt;footer&gt;<span class="tag">&lt;/p&gt; 
+                    &lt;address&gt;</span>Пример с сайта basicweb.ru<span class="tag">&lt;/address&gt;
+                &lt;/footer&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;</span>
+        </pre>
+    <iframe name='tata' src="https://basicweb.ru/html/primer/44.php" width='900' height='550'></iframe>
+    <h2>Разметка иллюстраций в HTML 5</h2>
+    <p>Тег <span class='tag'>&lt;figure&gt;</span> применяется для обозначения контента, иллюстрирующего или поддерживающего определённую идею текста.</p>
+    <p>Благодаря тегу <span class='tag'>&lt;figcaption&gt;</span> вы можете вывести пояснение к содержимому, которое находится внутри тега <span class='tag'>&lt;figure&gt;</span>. Тег <span class='tag'>&lt;figcaption&gt;</span> должен размещаться как первый, или последний элемент внутри тега <span class='tag'>&lt;figure&gt;</span>.</p>
+    <pre><span class="tag">&lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+            &lt;head&gt;
+                &lt;title&gt;</span>Пример использования тега &lt;figure&gt;<span class="tag">&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;main&gt;
+                    &lt;figure&gt;
+                        &lt;img </span><span class="att">src = </span><span class="zna">"10.jpg" </span><span class="att">alt = </span><span class="zna">"ничоси" </span><span class="att">width = </span><span class="zna">"80" </span><span class="att">height = </span><span class="zna">"80"</span><span class="tag">&gt;
+                        &lt;figcaption&gt;</span>Ничоси 1<span class="tag">&lt;/figcaption&gt;
+                    &lt;/figure&gt;
+                    &lt;figure&gt;
+                        &lt;img</span> <span class="att">src = </span><span class="zna">"10.jpg" </span><span class="att">alt = </span><span class="zna">"ничоси" </span><span class="att">width = </span><span class="zna">"80" </span><span class="att">height = </span><span class="zna">"80"</span><span class="tag">&gt;
+                        &lt;figcaption&gt;</span>Ничоси 2<span class="tag">&lt;/figcaption&gt;
+                    &lt;/figure&gt;
+                &lt;/main&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;</span>
+        </pre>
+    <iframe name='edte' width='200' height='260' src="https://basicweb.ru/html/primer/45.php"></iframe>
+    <p>!Если вы разместите элемент <span class='tag'>&lt;figcaption&gt;</span> первым вложенным элементом тега <span class=' tag'>&lt;figure&gt;</span>, то пояснение будет отображаться сверху изображения:</p>
+    <h2>Скрытие содержимого в HTML 5</h2>
+    <p>Тег <span class='tag'>&lt;details&gt;</span> определяет дополнительные детали, которые пользователь может отобразить или скрыть . Содержание тега отображается для пользователя тольвко если логический атрибут <span class='att'>open</span> установлен.</p>
+    <p>Тег <span class='tag'>&lt;summary&gt;</span> определяет видимый заголовок для тега <span class='tag'>&lt;details&gt;</span>. Если элемент не используется, то устанавливается значение браузера по умолчанию (как правило, заголовок "Подробнее").</p>
+    <pre><span class="tag">&lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+            &lt;head&gt;
+                &lt;title&gt;</span>Пример использования тега &lt;details&gt; и &lt;summary&gt;<span class="tag">&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;details&gt;
+                    &lt;summary&gt;</span>Показать ? <span class="tag">&lt;/summary&gt;</span>
+                    Пожалуйста <span class="tag">&lt;img </span><span class="att">src = </span><span class="zna">"10.jpg" </span><span class="att">alt = </span><span class="zna">"ничоси" </span><span class="att">width = </span><span class="zna">"80" </span><span class="att">height = </span><span class="zna">"80"</span><span class="tag">&gt;
+                    &lt;details&gt;
+                        &lt;summary&gt;</span>Ещё? <span class="tag">&lt;/summary&gt;
+                        &lt;img </span><span class="att">src = </span><span class="zna">"10.jpg" </span><span class="att">alt = </span><span class="zna">"ничоси" </span><span class="att">width = </span><span class="zna">"80" </span><span class="att">height = </span><span class="zna">"80"</span><span class="tag">&gt;
+                    &lt;/details&gt;
+                &lt;/details&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;</span>
+        </pre>
+    <iframe name='tedred' width='200' height='260' src="https://basicweb.ru/html/primer/47.php"></iframe>
+</body>
+</html>

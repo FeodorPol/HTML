@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Построение изображения-карты</title>
+    <style>
+        span.tag { 
+            color:blue
+        }
+        span.att {
+            color:red
+        }
+        span.zna {
+            color:purple
+        }
+        hr {
+            border: 1px dotted #fed930
+        }
+        table {
+            border: 1px solid #1bbcf7
+            
+        }
+        pre {
+            background-color: #e8e8ff;
+            border: 2px #01647b solid;
+        }
+        .tableTag td, .tableTag th {
+            border-color: rgba(1,100,123,.3);
+        }
+        td, th {
+            border: 1px solid;
+            padding: 5px;
+        }
+        figure {
+            background-color: #e8e8ff;
+        }
+        figcaption {
+            font-style: italic;
+            color: #01647b;
+        }
+        img {
+            width:100%;
+            height:auto
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1 style='text-align:center'>Построение изображения-карты</h1>
+        </header>
+        <article>
+            <p>Тег <span class='tag'>&lt;map&gt;</span> используется для определения изображения-карты. Изображение-карты представляет собой изображение с определйнноый активной областью. Элемент <span class='tag'>&lt;map&gt;</span> содержит ряд <span class='tag'>&lt;area&gt;</span> тегов, котрые определяют интерактивные область в изображении-карте, т.е. при клике на определённую область изображения происходят определённые действия, например, открывается отдельная страница с описанием данного участка изображения.</p>
+            <hr>
+            <p>Атрибут <span class='att'>name</span> элемента <span class='tag'>&lt;map&gt;</span> является обязательным, он связан с артибутом <span class='att'>usemap</span> элемента <span class='tag'>&lt;img&gt;</span> (создает связь между изображением и картой).</p>
+            <hr>
+            <p>Атрибутами тега <span class='tag'>&lt;area&gt;</span> мы указываем как координаты области (атрибут <span class='att'>coords</span>), так и тип необходимой нам фигуры (атрибут <span class='att'>shape</span>):</p>
+            <table> 
+                <tbody><tr>
+                <th>Значение атрибута</th> <th>Определение</th> 
+                </tr> 
+                <tr> 
+                <td> <span class="zna"> default </span> </td><td>Весь регион.</td> 
+                </tr>
+                <tr> 
+                <td> <span class="zna"> rect </span> </td><td>Прямоугольная область (<b>x1,y1,x2,y2</b>).</td> 
+                </tr>
+                <tr> 
+                <td> <span class="zna"> circle </span> </td><td>Круглая область (<b>x,y,r- радиус</b>).</td> 
+                </tr>
+                <tr> 
+                <td> <span class="zna"> poly </span> </td><td>Многоугольную область (<b>x1,y1,x2,y2,...,xn,yn</b>).</td> 
+                </tr>
+                </tbody></table>
+            <figure>
+                <img src="../img/48.png" alt="dfdfdfdfdf">
+                <figcaption>Создание активной области с использованием сисемы координат.</figcaption>
+            </figure>
+            <h2>Пример использования</h2>
+            <p>Рассмотрим пример, в котором при клике по определйнной фигуре на одном рисунке происходит переход на разные веб-страницы, которые описывают эти фигуры (ссылки на Википедию):</p>
+            <pre><span class="tag">&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;head&gt;
+                &lt;title&gt;</span>Пример использование тега &lt;map&gt;<span class="tag">&lt;/title&gt;
+                &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;p&gt;</span>Выбери фигуру:<span class="tag">&lt;/p&gt;
+                        &lt;img</span> <span class="att">src = </span><span class="zna">"map.png" </span><span class="att">usemap = </span><span class="zna">"#figuri" </span><span class="att">alt = </span><span class="zna">"Доступны 4 фигуры для выбора"</span> <span class="tag">&gt;
+                        &lt;map </span><span class="att">name = </span><span class="zna">"figuri"</span> <span class="tag">&gt;
+                            &lt;area</span> <span class="att">shape = </span><span class="zna">"rect" </span><span class="att">coords = </span><span class="zna">"25,25,125,125" </span><span class="att">href = </span><span class="zna">"red.html" </span><span class="att">alt = </span><span class="zna">"Красный квадрат" </span><span class="tag">&gt;
+                            &lt;area</span> <span class="att">shape = </span><span class="zna">"circle" </span><span class="att">coords = <span class="zna">"200,75,50" <span class="att">href = </span><span class="zna">"green.html" </span><span class="att">alt = </span><span class="zna">"Зелёный круг." </span><span class="tag">&gt;
+                            &lt;area </span><span class="att">shape = </span><span class="zna">"poly" </span><span class="att">coords = </span><span class="zna">"325,25,262,125,388,125" </span><span class="att">href = </span><span class="zna">"blue.html" </span><span class="att">alt = </span><span class="zna">"Голубой треугольник" </span><span class="tag">&gt;
+                            &lt;area </span><span class="att">shape = </span><span class="zna">"poly" </span><span class="att">coords = </span><span class="zna">"450,25,435,60,400,75,435,90,450,125,465,90,500,75,465,60" </span> <span class="att">href = </span><span class="zna">"yellow.html"</span><span class="att"> alt = </span><span class="zna">"Желтая звезда" </span><span class="tag">&gt;
+                        &lt;/map&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;</span>
+                </span></span></pre>
+            <hr>
+            <p>Обращаю внимание на то , что елси у тега <span class='tag'>&lt;area&gt;</span> используется атрибут <span class='att'>href</span>, который определяет гипперссылку на площиади, то необходимо обязательно указывать атрибут <span class='att'>att</span> (альтернативныйй текст для области).</p>
+            <p>В HTML 5, елси у элемента <span class='tag'>&lt;map&gt;</span> указан глобальный атрибут <span class='att'>id</span>, то он должен иметь то же значение, что и атрибут <span class='att'>name</span>.</p>
+            <hr>
+            <figure>
+                <iframe src="https://basicweb.ru/html/primer/49.php" width='550' height='300'></iframe> 
+                <figcaption>Пример построения изображения-карты в HTML.</figcaption>
+            </figure>
+        </article>
+    </main>
+</body>
+</html>

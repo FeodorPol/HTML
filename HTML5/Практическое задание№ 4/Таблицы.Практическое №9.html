@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Мб втаблО?</title> 
+    </head>
+    <body style='text-align:center'>
+<table border='1'> <!--border-граница-->
+    <caption>Практическое задание №12</caption> <!--Наименование таблицы-->>
+            <tr>  <!--table raw-строка таблицы-->
+                <th>Позиция</th><th>Товар</th><th>Стоимсть, руб.</th> <!--table head-ячейка заголовка таблицы(жирный шрифт, отцентровка)-->
+                </tr>
+                <tr>
+                    <th>Один</th><td>Доширак</td><td>25</td>  <!--table data-данные в одной ячейке табл.-->
+                </tr>
+                <tr>
+                    <th>Два</th><td>Котлетки с пюрешкой</td><td>150</td>
+                </tr>
+</table>
+<br>
+<table border='1'>
+<caption>Практическое задание №13</caption>
+<tr>
+    <th>Позиция</th><th>Товар</th><th>Стоимость, руб.</th>
+</tr>
+<tr>
+    <th>Один</th><td rowspan='2'>Доширак</td><td rowspan='2'>25</td> <!--rowspan-размах рядов-объединение строк(2-кло-во ячеек)-->
+</tr>
+<tr>
+    <td>Два</td>
+</tr>
+</table>
+<br>
+<table border='1'>
+    <caption>Практическое задание №14</caption>
+    <tr>
+        <th colspan='2'>№&frasl;Товар</th><th>Стоимость, руб.</th> <!--colspan-column span-размах столбца ВПРАВО-->
+    </tr>
+    <tr>
+        <td>1.</td><td>Доширак</td><td>25</td>
+    </tr>
+<tr>
+    <td>2.</td><td>Доширак</td><td>150</td>
+</tr>
+</table>
+<br>
+<table>
+    <caption>Практическое задание №15</caption>
+
+        <colgroup> <!--определяет группу столбцов для форматирования-->
+<col style='background-color: #f00;'><!--col-column-столбец-хар-ки одного/нескольких столбцов-->
+<col style='background-color:#ff0'>
+<col  span='2' style='background-color:#0f0'> <!--span- размах столбца (определяет какое кол-во столбцов охватывать)-->
+        </colgroup>
+        <tr>
+            <th>Красный</th><th>Жёлтый</th><th colspan='2'>Зелёный</th>
+        </tr>
+        <tr>
+            <td>red</td><td>yellow</td><td>green</td><td>green</td>
+        </tr>
+</table>
+<br>
+<table>
+    <caption>Практическое задание №16</caption>
+    <thead style='background-color:#ff0'><!--table head-голова(верхушка) таблицы-создаёт одну/неск. строк, находящихся во главе табл.-->
+        <th>Услуга</th><th>Стоимость</th>
+    </thead>
+    <tfoot style='background-color:#f00'><!--table footer-нога таблицы-нижний колонтитул-то же что и <thead>(только внизу)-->
+        <th>Сумма</th><th>150 000</th>
+    </tfoot>
+    <tbody style='background-color:#0f0'><!--тело таблицы-по смыслу в буттерброде между <thead> & <tfoot>-->
+        <tr>
+            <td>Фантазия один</td><td>10 000</td>
+        </tr>
+        <tr>
+            <td>Фантазия два</td><td>20 000</td>
+        </tr>
+        <tr>
+            <td>Фантазия три</td><td>30 000</td>
+        </tr>
+        <tr>
+            <td>Фантазия четыре</td><td>40 000</td>
+        </tr>
+        <tr>
+            <td>Фантазия пять</td><td>50 000</td>
+        </tr>
+    </tbody>
+</table>
+    </body>
+</html>

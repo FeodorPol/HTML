@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>То самое</title>
+        <style>
+            span.com {
+                color:green
+            }
+            span.att {
+                color:red
+            }
+            span.tag {
+                color:blue
+            }
+            span.zna {
+                color:#8525d3
+            }
+            hr.dottedOrange {
+                border: 1px dotted #fed93d;
+            }
+            .tableTag td, .tableTag th {
+                border-color: rgba(1,100,123,.3);
+            }
+            td, th {
+                border: 1px solid;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body style='font-family:Verdana, Verdana, Geneva, Tahoma, sans-serif'>
+        <h1 style='text-align:center'>HTML формы</h1>
+        <p>Формы используются для сбора информации введённой пользователями.</p>
+        <p>Синтаксически парный тег <span class='tag'>&lt;form&gt;</span> определяет форму в HTML документе.</p>
+        <p><hr class='dottedOrange'><b>Основная задача формы заключается в том, чтобы принять от пользователя входящуу информацию и передать её для дальнейшей обработки на стороне сервера.</b><hr class='dottedOrange'></p>
+        <p>Элемент <span class='tag'>&lt;input&gt;</span> является <b>основным элементом формы</b> и определяет пользовательское поле для ввода информации. Поле ввода принимает различный вид, в зависимости от значения атрибута <span class='att'>type</span>, применённого вк данному элементу:</p>
+        <table class="tableTag">
+            <tbody><tr>
+            <th>Значение</th><th class="tatt">Описание</th>
+            </tr>
+            <tr>
+            <td><span class="zna">button</span><br><input type="button" value="кнопка" style="width:50%;"></td><td>Определяет кнопку. Как правило, используется в основном совместно с языком программирования <i>JavaScript</i> для активации скрипта.
+            </td>
+            </tr>
+            <tr>
+            <td><span class="zna">checkbox</span><br><label><input type="checkbox" checked="">включено</label><br><label><input type="checkbox">выключено</label></td><td>Элемент графического пользовательского интерфейса, позволяющий пользователю управлять параметром с двумя состояниями — <b>☑ включено</b> и <b>☐ выключено</b>. Элемент также называют  флажок, флаговая кнопка, чекбокс, галочка. </td>
+            </tr>
+            <tr>
+            <td><span class="zna">color</span><br><input type="color" style="width:50%;"></td><td>Элемент управления для задания цвета (определяет палитру цветов).</td>
+            </tr>
+            <tr>
+            <td><span class="zna">date</span><br><input type="date" style="width:100%;"></td><td>Элемент управления для ввода даты в формате <b>DD.MM.YYYY</b> (день, месяц и год). В элементе не указывается время.</td>
+            </tr>
+            <tr>
+            <td><span class="zna">datetime-local</span><br><input type="datetime-local" style="width:100%;"></td><td>Элемент управления для ввода даты в формате <b>DD.MM.YYYYThh:mm</b> (день, месяц, год, часы и минуты). В элементе не указывается часовой пояс.</td>
+            </tr>
+            <tr>
+            <td><span class="zna">email</span><br><input type="email" style="width:100%;"></td><td>Определяет поле для ввода адреса электронной почты.</td>
+            </tr>
+            <tr>
+            <td><span class="zna">file</span><br><input type="file" style="width:100%;"></td><td>Элемент управления, который позволяет пользователю выбрать файл.</td>
+            </tr>
+            <tr>
+            <td><span class="zna">hidden</span><br><input type="hidden" style="width:100%;"></td><td>Элемент управления, который определяет скрытое поле ввода. </td>
+            </tr>
+            <tr>
+            <td><span class="zna">image</span><br><input type="image" src="../img/right2.png" alt="submit_image" width="50px;"></td><td>Элемент управления, который определяет графическую кнопку <i>"отправить форму"</i> (значение <span class="zna">submit</span>). По аналогии с тегом <a href="/html/tag_img.php" class="tag" title="HTML тег img" style="display:inline;">&lt;img&gt;</a> вы должны использовать атрибут <a href="tag_input_att_src.php" class="att" title="Атрибут src HTML тега input" style="display:inline;">src</a>, чтобы задать путь к изображению и атрибут <span class='alt'>alt</span>, чтобы указать альтернативный текст, если изображение не будет загружено по каким-то причинам. Размеры изображения задаются атрибутами <span class='att'>width</span> (ширина) и <span class='att'>height</span> (высота).</td>
+            </tr>
+            <tr>
+            <td><span class="zna">month</span><br><input type="month" style="width:100%;"></td><td>Элемент управления для ввода месяца и года (<b>Month YYYY</b>). В элементе не указывается часовой пояс.</td>
+            </tr>
+            <tr>
+            <td><span class="zna">number</span><br><input type="number" style="width:100%;"></td><td>Элемент управления для ввода числа с плавающей точкой.</td>
+            </tr>
+            <tr>
+            <td><span class="zna">password</span><br><input type="password" style="width:100%;"></td><td>Определяет однострочное текстовое поле, предназначенное для ввода пароля (символы, введенные внутри поля скрываются). Используйте атрибут <span class="att">maxlength</span> HTML тега <a href="/html/tag_input.php" class="tag" title="HTML тег input" style="display:inline;">&lt;input&gt;</a>, чтобы задать максимальную длину значения, которое может быть введено в поле. </td>
+            </tr>
+            <tr>
+            <td><span class="zna">radio</span><br><label><input type="radio" name="radio" checked="">выбрано</label><br><label><input type="radio" name="radio">не выбрано</label></td><td>Элемент графического пользовательского интерфейса, который позволяет пользователю выбрать одно значение из предопределенной группы значений. Элемент, как правило, называют <b>радиокнопка</b> (<i title="от английского">radio button</i>) или <b>переключатель</b>.</td>
+            </tr>
+            <tr>
+            <td><span class="zna">range</span><br><input type="range" style="width:100%;"></td><td>Элемент управления для ввода номера (регулятор), в котором ввод точного значения не является важным. Этот тип управления использует следующие значения по умолчанию, если атрибуты не указаны:
+            <ul>
+            <li><span class="att">min = </span><span class="zna">"0"</span></li>
+            <li><span class="att">max = </span><span class="zna">"100"</span></li>
+            <li><span class="att">value = </span><span class="zna">min + (max - min) / 2</span>, или <span class="att">min</span> (если <span class="att">max</span> меньше чем <span class="att">min</span>)</li>
+            <li><span class="att">step = </span><span class="zna">"1"</span></li>
+            </ul> </td>
+            </tr>
+            <tr>
+            <td><span class="zna">reset</span><br><input type="reset" style="width:50%;"></td><td>Определяет кнопку сброса содержимого формы до значений, установленных по умолчанию.</td>
+            </tr>
+            <tr>
+            <td><span class="zna">search</span><br><input type="search" style="width:100%;"></td><td>Определяет однострочное текстовое поле для ввода строки поиска</td>
+            </tr>
+            <tr>
+            <td><span class="zna">submit</span><br><input type="submit" style="width:50%;"></td><td>Определяет кнопку отправки формы</td>
+            </tr>
+            <tr>
+            <td><span class="zna">tel</span><br><input type="tel" style="width:100%;"></td><td>Определяет элемент управления для ввода телефонного номера.</td>
+            </tr>
+            <tr>
+            <td><span class="zna">text</span><br><input type="text" style="width:100%;"></td><td>Определяет однострочное текстовое поле (по умолчанию имеет ширину в 20 символов).<br> <b>Это значение по умолчанию.</b></td>
+            </tr>
+            <tr>
+            <td><span class="zna">time</span><br><input type="time" style="width:100%;"></td><td>Определяет элемент управления для ввода времени без указания часового пояса (<b>hh:mm</b>).</td>
+            </tr>
+            <tr>
+            <td><span class="zna">url<br><input type="url" style="width:100%;"></span></td><td>Определяет поле для ввода абсолютного URL-адреса.</td>
+            </tr>
+            <tr>
+            <td><span class="zna">week</span><br><input type="week" style="width:100%;"></td><td>Определяет элемент управления для ввода порядкого номера недели в году  и самого года (Неделя <b>NN, YYYY</b>). В элементе не указывается часовой пояс.</td>
+            </tr>
+        </tbody></table><br>
+            <p>Пример испльзования этих элементов внутри формы:</p>
+            <pre style='border:2px #0bc4c1 solid'><span class="tag">&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;</span>HTML формы<span class="tag">&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;form&gt;</span>
+                        Имя: <span class="tag">&lt;input</span> <span class="att">type = </span><span class="zna">"text"</span>  <span class="att">name = </span><span class="zna">"firstname"</span> <span class="att">value = </span> <span class="zna">"Введите имя"</span><span class="tag">&gt; &lt;br&gt; &lt;br&gt;</span><span class='com'>&lt;!--<i>Два</i> однострочных текстовых поля.
+                            <b>(для коректной передачи и обработки формы обязательно указывайте для каждого этлемента <span class='tag'>&lt;input&gt;</span> атрибут <span class='att'>name</span>).</b></span>
+                        Фамилия: <span class="tag">&lt;input</span> <span class="att">type = </span><span class="zna">"text"</span> <span class="att">name = </span><span class="zna">"lastname"</span> <span class="att">value = </span> <span class="zna">"Введите фамилию"</span><span class="tag">&gt; &lt;br&gt; &lt;br&gt;</span><span class='com'>Кроме того атрибутом 
+                            <span class='att'>value</span> установили для этих полей значения по умолчанию (при заполнении полей значение этого атрибута 
+                                будет соответствовать пользовательскому вводу)--></span>
+                            Мужчина <span class="tag">&lt;input </span> <span class="att">type = </span><span class="zna">"radio"</span> <span class="att">name = </span><span class="zna">"sex"</span> <span class="att">value = </span> <span class="zna">"male"</span> <span class="att">checked</span><span class="tag">&gt;</span><span class='com'>&lt;!--Разместили <i>две</i> радиокнопки. 
+                                Для радиокнопок <b>необходимо указывать одинаковое имя</b>, чтобы была возможность выбрать один вариант из предложенных.</span>-->
+                            Женщина <span class="tag">&lt;input</span> <span class="att">type = </span><span class="zna">"radio"</span> <span class="att">name = </span><span class="zna">"sex"</span> <span class="att">value = </span> <span class="zna">"female"</span><span class="tag">&gt; &lt;br&gt; &lt;br&gt;</span>
+                            О себе: <span class="tag">&lt;br&gt;
+                            &lt;input</span> <span class="att">type = </span><span class="zna">"checkbox"</span> <span class="att">name = </span><span class="zna">"type1"</span> <span class="att">value = </span><span class="zna">"low"</span><span class="tag">&gt;</span>Меньше 18<span class="tag">&lt;br&gt;&lt;<span class='com'>&lt;!--Разместили <i>пять</i> флагвых кнопок (чекбоксов), 
+                                которые позволяют пользователям указать необходимые параметры (выбрать необходимые значения).--&gt;</span>
+                            &lt;input</span> <span class="att">type = </span><span class="zna">"checkbox"</span> <span class="att">name = </span><span class="zna">"type2"</span> <span class="att">value = </span><span class="zna">"2old"</span><span class="tag">&gt;</span>От 18 до 35<span class="tag">&lt;br&gt;
+                            &lt;input </span><span class="att">type = </span><span class="zna">"checkbox"</span> <span class="att">name = </span><span class="zna">"type3"</span> <span class="att">value = </span><span class="zna">"high"</span><span class="tag">&gt;</span>Больше 35<span class="tag">&lt;br&gt;&lt;
+                            &lt;input</span> <span class="att">type = </span><span class="zna">"checkbox"</span> <span class="att">name = </span><span class="zna">"type4"</span> <span class="att">value = </span><span class="zna">"busy"</span><span class="tag">&gt;</span>Женат /-а<span class="tag">&lt;br&gt;&lt;
+                            &lt;input </span><span class="att">type = </span><span class="zna">"checkbox"</span> <span class="att">name = </span><span class="zna">"type5"</span> <span class="att">value = </span><span class="zna">"cat"</span><span class="tag">&gt;</span>Есть кошка<span class="tag">&lt;br&gt;&lt;
+                            &lt;br&gt;
+                            &lt;input </span><span class="att">type = </span><span class="zna">"submit"</span> <span class="att">name =</span> <span class="zna">"submit"</span> <span class="att">value = </span><span class="zna">"отправить"</span><span class="tag">&gt;<span class='com'>&lt;!--Кнопка для отправки формы.--&gt;</span>
+                        &lt;/form&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;</span>
+            </pre>
+            <iframe name='iframchik' width='400' height='300' src='https://basicweb.ru/html/primer/32.php'></iframe><br><br>
+            <p>Обработчик формы это, как правило, обычная страница сервера, которая с помощью скрипта обрабатывает входные(полученные) данные. Чтобы указать обработчик формы, необходимо использовать тег <span class='tag'>&lt;form&gt;</span> совместно с атрибутом <span class='att'>action</span>:</p>
+            <pre style='border:2px #0bc4c1 solid'>
+                <span class='tag'>&lt;form</span> <span class='att'>action=</span><span class='zna'>"example.php"&gt;</span>
+            </pre>
+            <p>Обратить внимание, что в атрибуте <span class='att'>action</span> указывается URL адрес того места, куда отправляется форма. Если для формы не задан атрибут <span class='att'>action</span>, то значение по умольчанию этого атрибута считается текущая страница (обработчик формы - текущая страница).</p>
+            <p>Ещё одним важным атрибутом при работе с элементом <span class='tag'>&lt;form&gt;</span> является атрибут <span class='att'>method</span>, он определяет метод HTTP (get или post), который используется при передаче формы:</p>
+            <pre style='border:2px #0bc4c1 solid'>
+                <span class='tag'>&lt;form</span> <span class='att'>action=</span> <span class='zna'>"example.php"</span> <span class='att'>method=</span> <span class='zna'>"get"></span>
+                или:
+                <span class='tag'>&lt;form</span> <span class='att'>action=</span> <span class='zna'>"example.php"</span> <span class='att'>method=</span> <span class='zna'>"post"></span>
+            </pre>
+            <p>Вы можете использовать <span class='zna'>get</span> (метод по умолчанию) если форма отправвки является пассивной (как поисковый запрос) и не содержит конфиденциальной информацией. При использовании метода <span class='zna'>get</span> данные формы будут видны при передаче в адресе страницы:</p>
+            <pre style='border:2px #0bc4c1 solid'>
+                http://www.kakoitosait.ru/example.php<b>?firstname=Вася&lastname=Пупкин</b>
+            </pre>
+            <p>Используйте метод <span class='zna'>post</span> если форма использует обновление каких-либо данныъх, или включет в себя конфиденциальную информацию (например, пароль). Метод <span class='zna'>post</span> предлагает лучшую безопасноть, так как представленные данные отправляются на сервер в теле сообщения зароса.</p>
+            <h2>Группировка данных формы</h2>
+            <p>Тег <span class='tag'>&lt;fieldset&gt;</span> служит для визуальной группировки элементов, размещенных внутри формы. Во всех основных браузерах, данный элемент выделяется рамкой, а содержимое элемента получает внутренние отступы со всех сторон.</p>
+            <p>Тег <span class='tag'>&lt;legend&gt</span> определяет заголовок для <span class='tag'>&lt;fieldset&gt;</span> элемента, с помощью которого группируются элементы формы.</p>
+            <p>Пример:</p>
+            <pre style='border:2px #0bc4c1 solid'><span class="tag">&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;</span>Группировка данных формы<span class="tag">&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;form&gt;
+                            &lt;fieldset&gt;
+                                &lt;legend&gt;</span>Пожалуйста, представьтесь<span class="tag">&lt;/legend&gt;</span>
+                                Имя: <span class="tag">&lt;input</span> <span class="att">type = </span> <span class="zna">"text"</span> <span class="att">name = </span><span class="zna">"firstname"</span> <span class="att">value = </span> <span class="zna">"Введите имя"</span><span class="tag">&gt; &lt;br&gt; &lt;br&gt;</span>
+                                Фамилия: <span class="tag">&lt;input</span> <span class="att">type = </span> <span class="zna">"text"</span> <span class="att">name = </span><span class="zna">"lastname"</span> <span class="att">value = </span> <span class="zna">"Введите фамилию"</span><span class="tag">&gt; &lt;br&gt; &lt;br&gt;</span>
+                                Мужчина <span class="tag">&lt;input</span> <span class="att">type = </span> <span class="zna">"radio"</span> <span class="att">name = </span><span class="zna">"sex"</span> <span class="att">value = </span> <span class="zna">"male"</span> <span class="att">checked</span><span class="tag">&gt;</span>
+                                Женщина <span class="tag">&lt;input</span> <span class="att">type = </span> <span class="zna">"radio"</span> <span class="att">name = </span><span class="zna">"sex"</span> <span class="att">value = </span> <span class="zna">"female"</span><span class="tag">&gt;&lt;br&gt; &lt;br&gt;
+                                &lt;input</span> <span class="att">type = </span><span class="zna">"submit"</span> <span class="att">name = </span><span class="zna">"submit"</span> <span class="att">value = </span><span class="zna">"отправить"</span><span class="tag">&gt;
+                            &lt;/fieldset&gt;
+                        &lt;/form&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;</span>
+                </pre>
+            <iframe name='huayvai' width='400' height='190' src='https://basicweb.ru/html/primer/33.php'></iframe><br>
+            <h2>Текстовая метка</h2>
+            <p>Тег <span class='tag'>&lt;label&gt;</span> (англ.- метка) служит текстовой меткой для элемента <span class='tag'>&lt;input&gt;</span>. По своему виду метка ничем не отличается от обычного текста, но благодаря ей пользователь может выбрать элемент формы кликом по тексту, расположенному внутри элемента <span class='tag'>&lt;label&gt;</span>, а не по самому элементу <span class='tag'>&lt;input&gt;</span></p>
+            <p>Чтобы определить к какому элементу формы относиться текущая метка, необходимо использовать атрибут <span class='att'>for</span> тега <span class='tag'>&lt;label&gt;</span>.Значение атрибута <span class='att'>for</span> должно соответствовать значению глобального атрибута <span class='att'>id</span> того элемента формы, к которому будет относиться метка. Атрибут <span class='att'>for</span> можно не использовать, если элемент <span class='tag'>&lt;input&gt;</span>  будет находиться внутри элемента <span class='tag'>&lt;label&gt;</span>.</p>
+            <pre style='border:2px #0bc4c1 solid'><span class="tag">&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;</span>Пример использования тега &lt;label&gt;<span class="tag">&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;form&gt;
+                            &lt;label</span> <span class="att">for = </span><span class="zna">"yes"</span><span class="tag">&gt;</span>Да<span class="tag">&lt;/label&gt;</span> <span class="com">&lt;!--Здесь мы создаём метку для тега input c id = "yes"--&gt;</span>
+                            <span class="tag">&lt;input</span> <span class="att">type = </span><span class="zna">"radio"</span> <span class="att">id = </span><span class="zna">"yes"</span><span class="att">name = </span><span class="zna">"choice"</span> <span class="att">value = </span><span class="zna">"yes"</span> <span class="att">checked</span><span class="tag">&gt; 
+                            &lt;label</span> <span class="att">for = </span><span class="zna">"no"</span><span class="tag">&gt;</span>Нет<span class="tag">&lt;/label&gt;</span><span class="com">&lt;!--Здесь мы создаём метку для тега input c id = "no"--&gt;</span>
+                            <span class="tag">&lt;input </span><span class="att">type = </span><span class="zna">"radio"</span><span class="att">id = </span><span class="zna">"no"</span> <span class="att">name = </span><span class="zna">"choice"</span> <span class="att">value = </span><span class="zna">"no"</span><span class="tag">&gt;
+                        &lt;/form&gt;&lt;br&gt;
+                        &lt;form&gt;
+                            &lt;label&gt;</span>Да <span class="tag">&lt;input</span> <span class="att">type = </span><span class="zna">"radio"</span> <span class="att">name = </span><span class="zna">"choice2"</span> <span class="att">value = </span><span class="zna">"yes"</span><span class="tag">&gt; &lt;/label&gt;</span><span class="com">&lt;!--Здесь мы  помещаем теги &lt;input&gt;
+                            внутрь тегов &lt;label&gt; (при этом атрибут for не требуется)--&gt;</span>
+                            <span class="tag">&lt;label&gt;</span>Нет <span class="tag">&lt;input </span><span class="att">type = </span><span class="zna">"radio"</span><span class="att">name = </span><span class="zna">"choice2"</span> <span class="att">value = </span><span class="zna">"no"</span> <span class="att">checked</span><span class="tag">&gt;&lt;/label&gt; 
+                        &lt;/form&gt; 
+                    &lt;/body&gt;
+                &lt;/html&gt;</span>
+                </pre>
+            <iframe name='bugaga' wigth='450' height='100' src='https://basicweb.ru/html/primer/34.php'></iframe><br>
+            <h2>Подсказка для полей ввода</h2>
+            <p>Атрибут <span class='att'>placeholder</span> (HTML тэга <span class='tag'>&lt;input&gt;</span>) указывает подсказку, которая описывает ожидаемое значение для ввода в элемент. Подсказка отображается в поле ввода до того, как пользователь вводит значение.</p>
+            <p>*P.s. Браузер Internet Explorer поддерживает данный атрибут <b>только с 10-ой версии</b>, в некоторых случаях вы можете использовать атрибут <span class='att'>value</span> в качестве подсказки для поддержки более ранних версий этого браузера.</p>
+            <pre style='border:2px #0bc4c1 solid'><span class="tag">&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;</span>
+                        <span class="tag">&lt;title&gt;</span>Пример использования атрибута placeholder<span class="tag">&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;form&gt;</span>
+                            Login: <span class="tag">&lt;input <span class="att">type = </span><span class="zna">"text"</span>  <span class="att">name = </span><span class="zna">"login"</span> <span class="att">placeholder = </span><span class="zna">"Введите ваш логин"</span>&gt;&lt;br&gt;&lt;br&gt;</span>
+                            Password: <span class="tag">&lt;input <span class="att">type = </span><span class="zna">"password"</span>  <span class="att">name = </span><span class="zna">"password"</span> <span class="att">placeholder = </span><span class="zna">"Введите ваш пароль"</span>&gt;&lt;br&gt;
+                            &lt;button <span class="att">type = </span><span class="zna">"submit"</span>&gt;</span>Далее<span class="tag">&lt;/button&gt;
+                        <span class="tag">&lt;/form&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;</span>
+                </span></pre>
+                <iframe name='bugagashka' wigth='450' height='100' src='https://basicweb.ru/html/primer/34a.php'></iframe>
+    </body>
+</html>

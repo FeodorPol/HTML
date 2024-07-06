@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML тег кнопка</title>
+    <style>
+        span.tag {
+            color:blue
+        }
+        span.att {
+            color:red
+        }
+        span.zna {
+            color:purple
+        }
+        hr.dottedOrange {
+            color:#fed93d
+        }
+        table {
+            border: 1px solid #1bbcf7
+            
+        }
+        pre {
+            background-color: #e8e8ff;
+            border: 2px #01647b solid;
+        }
+    </style>
+</head>
+<body >
+    <h1 style='text-align:center'>HTML тег кнопка</h1>
+    <p>HTML тег <span class='tag'>&lt;button&gt;</span> используется для размещения кнопки. Внутри тега <span class='tag'>&lt;button&gt;</span> вы можете разместить как отформатированный текст, так и изображение. Это основная разница между этим элементом и кнопками, созданными с использованием тега <span class='tag'>&lt;input&gt;</span> (с атрибутом <span class='att'>type=</span> <span class='zna'>"button"</span>).</p>
+    <p>Атрибут <span class='att'>type</span> тега задаёт тип, используемой кнопки:</p>
+    <table border= 1>
+        <tbody><tr>
+        <th>Значение</th><th>Описание</th>
+        </tr>
+        <tr>
+        <td><span class="zna">button</span></td><td>Обычная кликабельная кнопка, которая не имеет поведения по умолчанию. Может использоваться совместно с клиентскими скриптами.</td>
+        </tr>
+        <tr>
+        <td><span class="zna">reset</span></td><td>Кнопка, которая сбрасывает все значения элементов управления формы к их первоначальным значениям.</td>
+        </tr>
+        <tr>
+        <td><span class="zna">submit</span></td><td>Кнопка, которая служит для отправки данных формы на сервер. Это значение по умолчанию, если атрибут не указан, или если атрибут динамически меняется в пустое или недопустимое значение.</td>
+        </tr>
+        </tbody></table>
+    <hr class='dottedOrange'>
+    <p>Всегда указывайте для тега <span class='tag'>&lt;button&gt;</span> тип атрибута <span class='att'>type=</span><span class='zna'>"button"</span>, если элемент используется в качестве обычной кнопки.</p>
+    <hr class='dottedOrange'>
+    <pre><span class="tag">&lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+            &lt;head&gt;
+                &lt;title&gt;</span>Тег &lt;button&gt;<span class="tag">&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;button <span class="att">type = </span><span class="zna">"button"</span> <span class="att">name = </span><span class="zna">"button1"</span> <span class="att">style = </span><span class="zna">"width: 80px; height:50px;"</span>&gt;
+                    &lt;b&gt;</span>Кнопка 1<span class="tag">&lt;/b&gt;
+                &lt;/button&gt;&lt;br&gt;&lt;br&gt;
+                &lt;button <span class="att">type = </span><span class="zna">"button"</span> <span class="att">name = </span><span class="zna">"button2"</span> <span class="att">style = </span><span class="zna">"width: 80px; height:50px"</span>&gt;
+                    &lt;img <span class="att">src = </span><span class="zna">"../../images/top2.png"</span> <span class="att">alt = </span><span class="zna">"up"</span> <span class="att">width = </span><span class="zna">"40"</span> <span class="att">height = </span><span class="zna">"40"</span>&gt;
+                &lt;/button&gt;&lt;br&gt;&lt;br&gt;
+                &lt;button <span class="att">type = </span><span class="zna">"button"</span> <span class="att">name = </span><span class="zna">"button3"</span> <span class="att">style = </span><span class="zna">"width: 80px; height:50px;"</span>&gt;
+                    &lt;i&gt;</span>Кнопка 3<span class="tag">&lt;/i&gt;
+                &lt;/button&gt;&lt;br&gt;&lt;br&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;</span>
+        </pre>
+    <p><b>Обрати внимание, что в атрибутах, которые задают размер не требуется указывать единицы измерения в отличии от CSS-стилей, по той причине, что атрибутами можно указать значение только в пикселях.</b></p>
+    <iframe name='jej' widht='100' height='220' src="https://basicweb.ru/html/primer/41.php" ></iframe>
+    <h2>Отключение кнопки</h2>
+    <pre><span class="tag">&lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+            &lt;head&gt;</span>
+                <span class="tag">&lt;title&gt;</span>Пример использования атрибута disabled HTML тега &lt;button&gt;<span class="tag">&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;button <span class="att">type = </span><span class="zna">"button"</span>&gt;</span>Элемент активен<span class="tag">&lt;/button&gt; <span class="com">&lt;!-- элемент используется в качестве кнопки --&gt;</span>
+                &lt;button <span class="att">type = </span><span class="zna">"button"</span> <span class="att">disabled</span>&gt;</span>Элемент отключен<span class="tag">&lt;/button&gt; <span class="com">&lt;!-- кнопка отключена --&gt;</span>
+            &lt;/body&gt;
+        &lt;/html&gt;</span>
+        </pre>   
+    <iframe src="https://basicweb.ru/html/primer/41a.php" ></iframe>
+    <h2>Автофокус на кнопке</h2>
+    <p>В логический атрибут <span class='att'>autofocus</span>(HTML тега <span class='tag'>&lt;button&gt;</span>) указывает, что кнопка должна автоматически получить фокус пои загрузке страницы.</p>
+    <pre><span class="tag">&lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+            &lt;head&gt;</span>
+                <span class="tag">&lt;title&gt;</span>Пример использования атрибута autofocus HTML тега &lt;button&gt;<span class="tag">&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;form&gt;
+                    &lt;button <span class="att">name = </span><span class="zna">"button"</span> <span class="att">type = </span><span class="zna">"button"</span>&gt;</span>Кнопка<span class="tag">&lt;/button&gt;
+                    &lt;button <span class="att">name = </span><span class="zna">"focusButton"</span> <span class="att">type = </span><span class="zna">"button"</span> <span class='att'>autofocus</span>&gt;&lt;b&gt;</span>Жми!!!<span class="tag">&lt;/b&gt;&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;</span>
+        </pre>
+    <iframe src="https://basicweb.ru/html/primer/41b.php" ></iframe>
+</body>
+</html>

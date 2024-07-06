@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Раскрой этот список и текстовую область</title>
+        <style>
+            span.tag {
+                color:blue
+            }
+            span.att {
+                color:red
+            }
+            span.zna {
+                color:indigo
+            }
+            span.com {
+                color:green
+            }
+            hr.dottedOrange {
+                border:1px dotted #fed93d;
+            }
+        </style>
+    </head>    
+        <body style='font-family:Verdana, Geneva, Tahoma, sans-serif'>
+            <h1 style='text-align: center;'>Раскрывающийся список и текстовая область</h1>
+            <h2>Раскрывающийся список</h2>  
+            <p>Тег <span class='tag'>&lt;select&gt;</span> представляет собой элемент управления, который позволяет создать раскрывающийся список. Тег <span class='tag'>&lt;option&gt;</span> определяет пункты раскрывающегося списка (параметры для выбора), он применяется как вложенный элемент тега <span class='tag'>&lt;select&gt;</span>.</p>
+            <hr class='dottedOrange'>
+            <p>Первый пункт в списке, как правило, отображается как выбранный, но вы можете добавить к этому элементу атрибут <span class='att'>selected</span>, чтобы задать предопределенный вариант.</p>
+            <hr class='dottedOrange'>
+            <p>Необходимо использовать атрибут <span class='att'>value</span> (значение) тега <span class='tag'>&lt;option&gt;</span>, чтобы указать какое значение отправляется на сервер для дальнейшей обработки.</p>
+            <pre style='border:2px #0bc4c1 solid'><span class="tag">&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;</span>Пример использования элемента &lt;select&gt;<span class="tag">&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;select</span> <span class="att">name = </span><span class="zna">"blacklist"</span><span class="tag">&gt;
+                            &lt;option</span> <span class="att">value = </span><span class="zna">"2PAC"</span><span class="tag">&gt;</span>Tupac Amaru Shakur<span class="tag">&lt;/option&gt;
+                            &lt;option</span> <span class="att">value = </span><span class="zna">"50cent"</span><span class="tag">&gt;</span>Curtis Jackson<span class="tag">&lt;/option&gt;</span>
+                            <span class="tag">&lt;option</span> <span class="att">value = </span><span class="zna">"Snoop Dogg"</span> <span class="att">selected</span><span class="tag">&gt;</span>Calvin Cordozar Broadus, Jr.<span class="tag">&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;</span>
+                </pre>
+            <iframe name='gg' width='400' height='100' src='https://basicweb.ru/html/primer/38.php'></iframe>
+            <h2>Отключение пункта меню</h2>
+            <p>С помощью логического атрибута <span class='att'>disable</span> (HTML тега <span class='tag'>&lt;option&gt;</span>) допускается отключать определённый пункт меню (параметр). Атрибут может использоваться совместно со скриптами, например, пока какое-то условие не выполнено параметр неактивен.</p>
+            <pre style='border:2px #0bc4c1 solid'><span class="tag">&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;</span>Пример использования HTML тега &lt;option&gt; в раскрывающемся списке<span class="tag">&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;select&gt;
+                            &lt;option <span class="att">value = </span><span class="zna">"A"</span>&gt;</span>Option A<span class="tag">&lt;/option&gt;
+                            &lt;option <span class="att">value = </span><span class="zna">"B"</span>&gt;</span>Option B<span class="tag">&lt;/option&gt;
+                            &lt;option <span class="att">value = </span><span class="zna">"C"</span> <span class="att">disabled</span>&gt;</span>Option C<span class="tag">&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;</span>
+                </pre>
+            <iframe name='cc' width='400' height='100' src='https://basicweb.ru/html/primer/38a.php'></iframe>
+            <h2>Группировка пунктов меню</h2>
+            <p>Тег <span class='tag'>&lt;optgroup&gt;</span>, который используется для группировки связанных данных в раскрывающемся списке <span class='tag'>&lt;select&gt;</span> и предназначен для более удобного представления информации пользователям.</p> 
+            <p>Атрибут <span class='att'>label</span> элемент задаёт наименование выделенной группы, выполненной полужирным начертанием.</p>
+            <pre style='border:2px #0bc4c1 solid'><span class="tag">&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;</span>Пример использования HTML тега &lt;optgroup&gt;<span class="tag">&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;select </span> <span class="att">name = </span><span class="zna">"black&amp;white"</span><span class="tag">&gt;
+                            &lt;optgroup</span> <span class="att">label = </span><span class="zna">"Blacklist"</span><span class="tag">&gt;</span> <span class="com">&lt;!--Группа №1 --&gt;</span>
+                                <span class="tag">&lt;option</span> <span class="att">value = </span><span class="zna">"2PAC"</span><span class="tag">&gt;</span> Tupac Amaru Shakur <span class="tag">&lt;/option&gt;
+                                &lt;option</span> <span class="att">value = </span><span class="zna">"50cent"</span><span class="tag">&gt;</span> Curtis Jackson <span class="tag">&lt;/option&gt;
+                                &lt;option</span> <span class="att">value = </span><span class="zna">"Snoop Dogg"</span> <span class="att">selected </span><span class="tag">&gt;</span> Calvin Cordozar Broadus, Jr. <span class="tag">&lt;/option&gt;
+                            &lt;/optgroup&gt;
+                            &lt;optgroup</span> <span class="att">label = </span><span class="zna">"Whitelist"</span><span class="tag">&gt;</span> <span class="com">&lt;!--Группа №2 --&gt;</span>
+                                <span class="tag">&lt;option</span> <span class="att">value = </span><span class="zna">"Eminem"</span><span class="tag">&gt;</span>Marshall Bruce Mathers III<span class="tag">&lt;/option&gt;
+                            &lt;/optgroup&gt;
+                        &lt;/select&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;</span>
+                </pre>
+            <iframe name='kk' width='400' height='100' src='https://basicweb.ru/html/primer/39.php'></iframe>
+            <p>В следующем примере с использованием логического атрибута <span class='att'>disable</span> мы отключилм одну группу ("Group B"):</p>
+            <pre style='border:2px #0bc4c1 solid'><span class="tag">&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;</span>Пример использования атрибута disabled HTML тега &lt;optgroup&gt;<span class="tag">&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;select&gt;
+                            &lt;optgroup</span> <span class="att">label = </span><span class="zna">"Group A"</span><span class="tag">&gt;</span> <span class="com">&lt;!--Группа №1 --&gt;</span>
+                                <span class="tag">&lt;option&gt;</span>A.1<span class="tag">&lt;/option&gt;
+                            &lt;/optgroup&gt;
+                            &lt;optgroup</span> <span class="att">label = </span><span class="zna">"Group B"</span> <span class="att">disabled</span><span class="tag">&gt;</span> <span class="com">&lt;!--Группа №2 (отключена)--&gt;</span>
+                                <span class="tag">&lt;option&gt;</span>B.1<span class="tag">&lt;/option&gt;
+                                &lt;option&gt;</span>B.2<span class="tag">&lt;/option&gt;
+                            &lt;/optgroup&gt;
+                            &lt;optgroup</span> <span class="att">label = </span><span class="zna">"Group C"</span><span class="tag">&gt;</span> <span class="com">&lt;!--Группа №3 --&gt;</span>
+                                <span class="tag">&lt;option&gt;</span>C.1<span class="tag">&lt;/option&gt;
+                                &lt;option&gt;</span>C.2<span class="tag">&lt;/option&gt;
+                                &lt;option&gt;</span>C.3<span class="tag">&lt;/option&gt;
+                            &lt;/optgroup&gt;
+                        &lt;/select&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;</span>
+                </pre>
+            <iframe name='tt' width='400' height='100' src='https://basicweb.ru/html/primer/39a.php'></iframe>
+            <h2>Отключение списка и мультивыбор</h2>
+            <p>Атрибут <span class='att'>multiple</span>, который указывает, что допускается выбрать в списке несколько вариантов сразу (через <kbd>Ctrl</kbd> в Windows и через <kbd>Command</kbd> в Mac).</p>
+            <p>Далее мы рассмотрим пример, в котором отключим целый список и составим список, в котором допускается выбрать несколько значений сразу:</p>
+            <pre style='border:2px #0bc4c1 solid'><span class="tag">&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;</span>Атрибуты disabled и multiple тега &lt;select&gt;<span class="tag">&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;select <span class="att">name = </span><span class="zna">"firstlist"</span> <span class="att">disabled</span>&gt; <span class="com">&lt;!-- список отключен --&gt;</span>
+                            &lt;option <span class="att">value = </span><span class="zna">"1"</span>&gt;</span>1<span class="tag">&lt;/option&gt;
+                            &lt;option <span class="att">value = </span><span class="zna">"2"</span>&gt;</span>2<span class="tag">&lt;/option&gt;
+                            &lt;option <span class="att">value = </span><span class="zna">"3"</span>&gt;</span>3<span class="tag">&lt;/option&gt;
+                        &lt;/select&gt;
+                        &lt;select <span class="att">name = </span><span class="zna">"secondlist"</span> <span class="att">multiple</span>&gt; <span class="com">&lt;!-- список с возможностью выбора нескольких значений --&gt;</span>
+                            &lt;option <span class="att">value = </span><span class="zna">"A"</span>&gt;</span>A<span class="tag">&lt;/option&gt;
+                            &lt;option <span class="att">value = </span><span class="zna">"B"</span>&gt;</span>B<span class="tag">&lt;/option&gt;
+                            &lt;option <span class="att">value = </span><span class="zna">"C"</span>&gt;</span>C<span class="tag">&lt;/option&gt;
+                            &lt;option <span class="att">value = </span><span class="zna">"D"</span>&gt;</span>D<span class="tag">&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;</span>
+                </pre>
+            <iframe name='ee' width='400' height='100' src='https://basicweb.ru/html/primer/39b.php'></iframe>
+            <h2>Текстовая область</h2>
+            <p>Тег <span class='tag'>&lt;textarea&gt;</span> представляет собой формы для создания области многострочного ввода. Основное отличие от тега <span class='tag'>&lt;input&gt;</span> заключается в том, что допускается переносы строк. Текст внутри неё отображается браузерами моноширным шрифтом Courier (курьер).</p>
+            <pre style='border:2px #0bc4c1 solid'><span class="tag">&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;</span>Пример использования тега &lt;textarea&gt;<span class="tag">&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;form&gt;
+                            &lt;textarea </span> <span class="att">name = </span><span class="zna">"auth_msg"</span> <span class="att">rows = </span><span class="zna">"10" </span><span class="att">cols = </span><span class="zna">"45"</span><span class="tag">&gt;</span>Здесь Вы можете написать информацию для автора…<span class="tag">&lt;/textarea&gt;&lt;br&gt;
+                            <span class='com'>&lt;!--Атрибутом <span class='att'>rows</span> задали высоту строк, равной десяти символам (<span class='att'>rows=</span><span class='zna'>"10"</span>), и атрибутом <span class='att'>cols</span> указали ширину поля,
+                            равной 45 символов (<span class='att'>cols=</span><span class='zna'>"10"</span>)--></span>
+                            &lt;input </span><span class="att">type = </span><span class="zna">"submit"</span> <span class="att">name =</span> <span class="zna">"submitInfo"</span> <span class="att">value = </span><span class="zna">"отправить"</span><span class="tag">&gt;
+                        &lt;/form&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;</span>
+                </pre>
+            <iframe name='zz' width='400' height='200' src='https://basicweb.ru/html/primer/40.php'></iframe>
+            <h2>Размеры текстовой области </h2>
+            <p>Если атрибуты <span class='att'>cols</span> или <span class='att'>rows</span> указаны, то их значение дожно быть положительным целым числом. <b>Значение атрибута <span class='att'>cols</span>(ширина) по умолчанию 20 символов, а <span class='att'>rows</span> (высота) 2 символа.</b></p>
+            <pre style='border:2px #0bc4c1 solid'><span class="tag">&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;</span>Использование атрибута cols HTML тега &lt;textarea&gt;<span class="tag">&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;form&gt;
+                            &lt;textarea <span class="att">cols = </span><span class="zna">"10"</span>&gt;</span>Текстовое поле шириной 10 символов.<span class="tag">&lt;/textarea&gt;
+                            &lt;textarea <span class="att">cols = </span><span class="zna">"10"</span> <span class="att">style = </span><span class="zna">"width:200px"</span>&gt;</span>Текстовое поле шириной 10 символов и 200 пикселей.<span class="tag">&lt;/textarea&gt;&lt;br&gt;
+                            &lt;input </span><span class="att">type = </span><span class="zna">"submit"</span> <span class="att">cols =</span> <span class="zna">"submitInfo"</span> <span class="att">value = </span><span class="zna">"отправить"</span><span class="tag">&gt;
+                        &lt;/form&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;</span>
+                </pre>
+            <iframe name='xx' width='400' height='150' src='https://basicweb.ru/html/primer/40a.php'></iframe>
+            <h2>Отключение текстовой области</h2>
+            <pre style='border:2px #0bc4c1 solid'><span class="tag">&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;</span>Атрибуты disabled и name тега &lt;textarea&gt;<span class="tag">&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;form&gt;
+                            &lt;textarea <span class="att">name = </span><span class="zna">"userInfo"</span>&gt;</span>Текстовое поле доступно к заполнению.<span class="tag">&lt;/textarea&gt;
+                            &lt;textarea <span class="att">name = </span><span class="zna">"staticInfo"</span> <span class="att">disabled</span>&gt;</span>Текстовое поле не доступно к заполнению.<span class="tag">&lt;/textarea&gt;&lt;br&gt;
+                            &lt;input </span><span class="att">type = </span><span class="zna">"submit"</span> <span class="att">name =</span> <span class="zna">"submitInfo"</span> <span class="att">value = </span><span class="zna">"отправить"</span><span class="tag">&gt;
+                        &lt;/form&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;</span>
+                </pre>
+            <iframe name='zx' width='400' height='150' src='https://basicweb.ru/html/primer/947.php'></iframe>
+            <h2>Подсказка для текстовой области</h2>
+            <p>Благодаря атрибуту <span class='att'>placeholder</span> (HTML тега <span class='tag'>&lt;textarea&gt;</span>) допускается указывать текст подсказки, которая описывает ожидаемое значение для ввода пользователем в элемент.</p>
+            <hr class='dottedOrange'>
+            <p>Текст подсказки скрывается, когда пользователь вводит значение.</p>
+            <hr class='dottedOrange'>
+            <p>С помощью атрибута <span class='att'>readonly</span> указывается, что текстовое поле будет доступно только для чтения (содержимое не может быть изменезно).</p>
+            <pre style='border:2px #0bc4c1 solid'><span class="tag">&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;</span>Атрибуты placeholder и readonly тега &lt;textarea&gt;<span class="tag">&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;form&gt;
+                            &lt;textarea <span class="att">placeholder = </span><span class="zna">"Введите информацию в текстовое поле"</span>&gt;&lt;/textarea&gt;
+                            &lt;textarea <span class="att">placeholder = </span><span class="zna">"Поле доступно только для чтения"</span> <span class="att">readonly</span>&gt;&lt;/textarea&gt;&lt;br&gt;
+                            &lt;input </span><span class="att">type = </span><span class="zna">"submit"</span> <span class="att">name =</span> <span class="zna">"submitInfo"</span> <span class="att">value = </span><span class="zna">"отправить"</span><span class="tag">&gt;
+                        &lt;/form&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;</span>
+                </pre>
+            <iframe name='ii' width='400' heigth='150' src='https://basicweb.ru/html/primer/40c.php'></iframe>
+        </body>
+</html>

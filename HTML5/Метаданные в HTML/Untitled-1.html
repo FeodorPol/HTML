@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Метаданные в HTML</title>
+    <style>
+        span.tag {
+            color:blue
+        }
+        span.att {
+            color:red
+        }
+        span.zna {
+            color:purple
+        }
+        hr {
+            border: 1px dotted #fed930
+        }
+        table {
+            border: 1px solid #1bbcf7
+            
+        }
+        pre {
+            background-color: #e8e8ff;
+            border: 2px #01647b solid;
+        }
+        .tableTag td, .tableTag th {
+            border-color: rgba(1,100,123,.3);
+        }
+        td, th {
+            border: 1px solid;
+            padding: 5px;
+        }
+        figure {
+            background-color: #e8e8ff;
+        }
+        figcaption {
+            font-style: italic;
+            color: #01647b;
+        }
+        img {
+            width:100%;
+            height:auto
+        }
+        td.tyes {
+            background-color: #d5f2a9;
+            text-align: center;
+        }
+        td.tno {
+            background-color: #ffbaba;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style='font-family:Verdana, Geneva, Tahoma, sans-serif'>
+    <header>
+        <h1 style='text-align:center'>Метаданные в HTML</h1>
+    </header>
+    <main>
+        <article>
+            <h2>Указание кодировки документа</h2>
+            <p>Тег <span class='tag'>&lt;meta&gt;</span> позволяет сообщить браузеру посетителя, какой набор символов и какую кодировку необходимо установить на веб-странице. Атрибут <span class='att'>charset</span>(HTML тега <span class='tag'>&lt;meta&gt;</span>) задаёт кодировку символов для HTML -документа.</p>
+            <pre><span class="tag">&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;meta </span><span class="att">charset = </span><span class="zna">"utf-8" </span><span class="tag">&gt;  <span class="com">&lt;!-- задаем кодировку документа UTF-8 --&gt;</span>
+                        &lt;title&gt;</span>Пример использования тега &lt;meta&gt;<span class="tag">&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h2&gt;</span>Это заголовок.<span class="tag">&lt;/h2&gt;
+                        &lt;p&gt;</span>Это параграф.<span class="tag">&lt;/p&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;</span>
+                </pre>
+            <p>*Кодировка <b>UTF-8</b> одна из общепринятых и стандартизированных кодировок текста, которая позволяет хранить символы Юникода.</p>
+            <hr>
+                <p>Считается хорошей практикой, и настоятельно рекомендуется определять набор символов (кодировку), используя атрибут <span class='att'>charset</span>. Атрибут <span class='att'>charset</span> являетс лишь частью члгоритма определения кодировки страницы браузером. Используя более распространенную кодировку символов, увеличивает шанс того, что браузер будет её понимать.</p>
+            <hr>
+            <h2>Часто используемые мета-теги</h2>
+            <p>Метаданные разделены на две основные группы:</p>
+            <ul>
+                <li><b>первая группа -</b> значения атрибута <span class='att'>name</span>.</li>
+                <li><b>вторая группа -</b> значения атрибута <span class='att'>http-equiv</span></li>
+            </ul>
+            <p>Атрибут <span class='att'>name</span> отвечает за текстовую информацию о странице, её авторе, содержит рекомендации для поисковых системм, а атрибут <span class='att'>http-equiv</span> формирует гипертекстовый заголовок страницы и определяет его обработку.</p>
+            <hr>
+                <p>Совместно с элементом <span class='tag'>&lt;meta&gt;</span> используется ещё один атрибут - <span class='att'>content</span>, его основная задача заключается в том, чтобы задать значения, связанное с атрибутами <span class='att'>name</span> и <span class='att'>http-equiv</span>, в зависимости  от контекста. Если один из этих атрибутов указан, то атрибут <span class='att'>content</span> должен обязательно пресутствовать, чтобы задать значение. Если атрибут <span class='att'>http-equiv</span> используется, то атрибут <span class='att'>name</span> не должен устанавливаться в мета-теге.</p>
+            <hr>
+            <p>Часто используемые варианты использования тега <span class='tag'>&lt;meta&gt;</span>:</p>
+            <pre><span class="tag">&lt;meta</span> <span class="att">name = </span><span class="zna">"description"</span> <span class="att">content = </span><span class="zna">"Бесплатные уроки по созданию сайтов"</span> <span class="tag">&gt;</span>
+            </pre>
+            <p>Описание конкретной страницы сайта.(Это описание могут использовать поисковые машины для отображения результатов поиска.)</p>
+            <pre><span class="tag">&lt;meta </span><span class="att">name = </span><span class="zna">"keywords" </span><span class="att">content = </span><span class="zna">"HTML, CSS, JavaScript"</span><span class="tag">&gt;</span>
+            </pre>
+            <p>Список ключевых слов (на конкретной странице)</p>
+            <pre><span class="tag">&lt;meta </span><span class="att">name = </span><span class="zna">"author" </span><span class="att">content = </span><span class="zna">"Denis Bolshakov"</span><span class="tag">&gt;</span>
+            </pre>
+            <p>Определяет автора контента:</p>
+            <br>
+            <pre><span class="tag">&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        <span class="tag">&lt;meta </span><span class="att">name = </span><span class="zna">"description"</span> <span class="att">content = </span><span class="zna">"Бесплатные уроки по созданию сайтов"</span> <span class="tag">&gt;</span> <span class="com">&lt;!-- мета элемент, который описывает содержимое документа --&gt;</span>
+                        <span class="tag">&lt;meta </span><span class="att">name = </span><span class="zna">"keywords" </span><span class="att">content = </span><span class="zna">"HTML, CSS, JavaScript, jQuery"</span><span class="tag">&gt;</span> <span class="com">&lt;!-- мета элемент, который описывает ключевые слова в документе --&gt;</span>
+                        <span class="tag">&lt;meta </span><span class="att">name = </span><span class="zna">"author" </span><span class="att">content = </span><span class="zna">"Denis Bolshakov"</span><span class="tag">&gt;</span> <span class="com">&lt;!-- мета элемент, который указывает имя автора документа --&gt;</span>
+                        &lt;title&gt;</span>Пример использования атрибутов name и content<span class="tag">&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h2&gt;</span> Это заголовок.<span class="tag">&lt;/h2&gt;
+                        &lt;p&gt;</span>Это параграф. <span class="tag">&lt;/p&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;</span>
+                </pre>
+            <h3 style='color:gray'>Атрибут http-equiv</h3>
+            <p>Атрибут <span class='att'>http-equiv</span> фактически эквивалентен гипертекстовому заголовку (имитация http-заголовка), формируют заголовок страницы и определяют его обработку. Как правило, они управляют действиями браузеров и используются для формирования информации, выдаваемой обычными http-заголовками.</p>
+            <pre><span class="tag">&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        <span class="tag">&lt;meta </span> <span class="att">http-equiv  = </span><span class="zna">"refresh"</span> <span class="att">content = </span><span class="zna">"15, URL='http://basicweb.ru'"</span> <span class="tag">&gt;</span> <span class="com">&lt;!-- мета элемент, который указывает, что страница будет перезагружена через 15 секунд и перейдет по указанному URL --&gt;</span>
+                        <span class="tag">&lt;meta </span> <span class="att">http-equiv  = </span><span class="zna">"content-security-policy"</span> <span class="att">content = </span><span class="zna">"default-src https:"</span> <span class="tag">&gt;</span> <span class="com">&lt;!-- мета элемент, который разрешает загрузку ресурсов (изображения, шрифты, скрипты и так далее) только с использованием https --&gt;</span>
+                        &lt;title&gt;</span>Пример использования атрибута http-equiv тега &lt;meta&gt;<span class="tag">&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h2&gt;</span> Это заголовок.<span class="tag">&lt;/h2&gt;
+                        &lt;p&gt;</span>Это параграф. <span class="tag">&lt;/p&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;</span>
+                </pre>
+            <ul>
+                <li><b>первый</b> мета элемент, указывает, что страница будет перезагружена (значение <span class="zna">refresh</span>) через 15 секунд и перейдет по указанному URL (значения, указанные в атрибуте <a href="tag_meta_att_content.php" title="Атрибут content HTML тега meta" class="att">content</a>). Если адрес URL не указан, то страница просто будет перезагружена.</li>
+                <li><b>второй</b> мета элемент разрешает загрузку ресурсов (изображения, шрифты, скрипты и так далее) только с использованием <b>https</b>. Это стало доступным благодаря использованию значения <span class="zna">content-security-policy</span>, которое позволяет с использованием атрибута <a href="tag_meta_att_content.php" title="Атрибут content HTML тега meta" class="att">content</a> определить правила (политику) для обслуживаемых ресурсов.</li>
+                </ul>
+            <h2>Индексация страниц</h2>
+            <p>Используется поисковыми системами при индексации страниц:</p>
+            <pre><span class="tag">&lt;meta </span><span class="att">name = </span><span class="zna">"robots" </span><span class="att">content = </span><span class="zna">"noindex, follow"</span><span class="tag">&gt;</span>
+            </pre>
+            <p>Доступные значения:</p>
+            <table class="tableTag"> 
+                <tbody><tr>
+                <th style="width:20%">Значение атрибута</th><th style="width:80%">Определение</th>
+                </tr> 
+                <tr> 
+                 <td><span class="zna">noindex</span></td><td> запрещает индексирование документа.</td>
+                </tr>
+                <tr> 
+                 <td><span class="zna">nofollow</span></td><td> запрещает проход по ссылкам в документе.</td>
+                </tr>
+                <tr> 
+                 <td><span class="zna">index</span></td><td>разрешает индексирование документа.</td>
+                </tr>
+                <tr> 
+                 <td><span class="zna">follow</span></td><td>разрешает проход по ссылкам в документе.</td>
+                </tr>
+                </tbody></table>
+            <h2>Настройка области просмотра</h2>
+            <p><b>Для того, чтобы мобильные брузеры автоматически не изменяли размер страниц сайта, необходимо в теге <span class='tag'>&lt;head&gt;</span> разместить метатег, который сообщает браузеру, как обрабатывать размеры страницы и изменять её масштаб:</b></p>
+            <pre><span class="tag">&lt;meta <span class="att">name = </span><span class="zna">"viewport"</span> <span class="att">content = </span><span class="zna">"width=device-width, initial-scale = 1"</span>&gt;</span>
+            </pre>
+            <ul>
+                <li>Атрибут <a href="tag_meta_att_name.php" title="Атрибут name HTML тега meta" class="att">name</a> задает имя документа метаданным, значение <span class="zna">"viewport"</span> дает подсказку браузеру о размере начального размера области просмотра. Функция атрибута <a href="tag_meta_att_content.php" title="Атрибут content HTML тега meta" class="att">content</a> задать значения для этого атрибута.</li>
+                <li>Значение <span class="zna">width=device-width</span> атрибута <a href="tag_meta_att_content.php" title="Атрибут content HTML тега meta" class="att">content</a> сообщает, что ширина страницы устанавливается в соответствии с размером экрана устройства в аппаратно-независимых пикселях (<i>device-independent pixel, dip</i>), что позволяет странице пересчитывать положение элементов для корректного отображения на различных экранах. По аналогии допускается указать значения для высоты <span class="zna">height=device-height</span>.</li>
+                <li>Значение <span class="zna">initial-scale=1</span> атрибута <a href="tag_meta_att_content.php" title="Атрибут content HTML тега meta" class="att">content</a> сообщает браузеру, что необходимо установить соответствие <b>1:1</b> для пикселей CSS и аппаратно-независимых пикселей вне зависимости от ориентации устройства (альбомной или портретной).</li>
+                </ul>
+            <p><b>Если все страницы вашего сайта адаптированы для просмотра на мобильных устройствах, то размещение вышеуказанного мета тега является обязательным.</b></p>
+            <p>Доступные значения:</p>
+            <table class="tableTag"> 
+                <tbody><tr>
+                <th style="width:20%">Значение атрибута</th><th style="width:80%">Определение</th>
+                </tr> 
+                <tr> 
+                 <td><span class="zna">width</span></td><td>Определяет ширину в пикселях области просмотра (значение - положительное целое число или <span class="zna">device-width</span>).</td>
+                </tr>
+                <tr> 
+                 <td><span class="zna">height</span></td><td>Определяет высоту в пикселях области просмотра (значение - положительное целое число или <span class="zna">device-height</span>).</td>
+                </tr>
+                <tr> 
+                 <td><span class="zna">initial-scale</span></td><td>Определяет соотношение между шириной устройства (<span class="zna">device-width</span> в портретном режиме или <span class="zna">device-height</span> в ландшафтном режиме) и размером области просмотра. Чем больше число, тем выше масштаб. Значение - положительное целое число от 0.0 до 10.0.</td>
+                </tr>
+                <tr> 
+                 <td><span class="zna">minimum-scale</span></td><td>Определяет минимальное значение zoom (оно должно быть меньше или равно <span class="zna">maximum-scale</span>). Значение - положительное целое число от 0.0 до 10.0.</td>
+                </tr>
+                <tr> 
+                 <td><span class="zna">maximum-scale</span></td><td>Определяет максимальное значение zoom (оно должно быть больше или равно <span class="zna">minimum-scale</span>). Значение - положительное целое число от 0.0 до 10.0.</td>
+                </tr>
+                <tr> 
+                 <td><span class="zna">user-scalable</span></td><td>Логическое значение, которое определяет, может ли пользователь увеличить масштаб веб-страницы. Значение по умолчанию <span class="zna">yes</span> (пользователь может увеличивать масштаб).</td>
+                </tr>
+                </tbody></table>
+            <h2>Управление режимами Internet Explorer</h2>
+            <p>Заключительный мета-тег, который должен присутствовать на Ваших страницах, позволяет в зависимости от указанного значения <span class="zna">content</span> сообщить браузеру Internet Explorer как отображать документ (в каком режиме) в зависимости от версии, которая используется в данный момент:</p>
+            <pre><span class="tag">&lt;meta <span class="att">http-equiv = </span><span class="zna">"X-UA-Compatible"</span> <span class="att">content = </span><span class="zna">"IE=edge"</span>&gt;</span>
+            </pre>
+            <p>Атрибут <span class="zna">content</span> задает режим для страницы, например, чтобы имитировать работу <i>Internet Explorer 7</i>, укажите <span class="zna">IE=EmulateIE7</span>. Укажите <span class="zna">IE=5</span>, <span class="zna">IE=7</span> или <span class="zna">IE=8</span>, чтобы выбрать один из этих режимов совместимости. Также можно задать <span class="zna">IE=edge</span>, чтобы использовать в <i>Internet Explorer 8</i> наивысший доступный режим.
+                Значение <span class="zna">IE=edge</span> сообщает браузеру пользователя, что необходимо использовать последний доступный режим отображения документа, используйте это значение на своих страницах.</p>
+            <p><b>Грамотное размещение метаданных на каждой странице вашего сайта, сделает его привелекательным для посковых машин и урпостит процесс индексации.</b></p>
+            <hr>
+        </article>
+    </main>
+</body>
+</html>

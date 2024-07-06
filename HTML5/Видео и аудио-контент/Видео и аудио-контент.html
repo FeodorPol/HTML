@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видео и аудио-контент</title>
+    <style>
+        span.tag {
+            color:blue
+        }
+        span.att {
+            color:red
+        }
+        span.zna {
+            color:purple
+        }
+        hr {
+            border: 1px dotted #fed930
+        }
+        table {
+            border: 1px solid #1bbcf7
+            
+        }
+        pre {
+            background-color: #e8e8ff;
+            border: 2px #01647b solid;
+        }
+        .tableTag td, .tableTag th {
+            border-color: rgba(1,100,123,.3);
+        }
+        td, th {
+            border: 1px solid;
+            padding: 5px;
+        }
+        figure {
+            background-color: #e8e8ff;
+        }
+        figcaption {
+            font-style: italic;
+            color: #01647b;
+        }
+        img {
+            width:100%;
+            height:auto
+        }
+        td.tyes {
+            background-color: #d5f2a9;
+            text-align: center;
+        }
+        td.tno {
+            background-color: #ffbaba;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style='font-family:Verdana, Geneva, Tahoma, sans-serif'>
+    <header>
+        <h1 style='text-align:center'>Видео и аудио-контент</h1>
+        <p>В HTML 5 были введины новые элементы <span class='tag'>&lt;video&gt;</span> (добавляет видео контент на страницу) и <span class='tag'>&lt;audio&gt;</span> (добавляет аудио контент на страницу).</p>
+        <p>В настоящее время эти элементы поддерживаются во всех современных браузерах.</p>
+    </header>
+    <article>
+        <h2>Добавление видео на HTML страницу</h2>
+        <p><b>Формат видеофайла &mdash;</b> это определйнная структура, в которой видеозапись хранится на носителе (запоминающее устройство) и поределяется двумя состовляющими: файлом-контейнером, в котором хранится сама видеозапись, и кодеками, которые используются для обработки звука и изображения.</p>
+        <p>В настоящее время существует <b>3 поддерживаемых формата видео</b> для элемента <span class='tag'>&Lt;video&gt;</span>:</p>
+        <table class="tableTag"> 
+            <tbody><tr>
+            <th>Браузер</th> <th> MP4</th> <th>WebM</th><th> Ogg </th>
+            </tr> 
+            <tr> 
+             <th>Chrome</th><td class="tyes">ДА</td><td class="tyes">ДА</td><td class="tyes">ДА</td>
+            </tr>
+            <tr> 
+             <th>Firefox </th><td class="tyes">ДА</td><td class="tyes">ДА</td><td class="tyes">ДА</td>
+            </tr>
+            <tr> 
+             <th>Opera </th><td class="tyes">ДА</td><td class="tyes">ДА</td><td class="tyes">ДА</td>
+            </tr>
+            <tr> 
+             <th>Safari </th><td class="tyes">ДА</td><td class="tno">НЕТ</td><td class="tno">НЕТ</td>
+            </tr>
+            <tr> 
+             <th>IE</th><td class="tyes">ДА</td><td class="tno">НЕТ</td><td class="tno">НЕТ</td>
+            </tr>
+            <tr>
+            <th>Edge</th><td class="tyes">ДА</td><td class="tno">НЕТ</td><td class="tno">НЕТ</td>
+            </tr>
+            </tbody>
+        </table>
+        <ul>
+            <li><b>Контейнер MPEG-4 + видео кодек Н.264 + аудио кодек ААС</b>. Это сочетание обычно называют "MPEG-4". Н.264 — высококачественный и гибкий видео кодек, но он запатентован и на его использование необходимо получить платную лицензию. Лицензионные требования стали основной причиной, почему браузеры отказываются его поддерживать. </li>
+            
+            <li><b>Контейнер Ogg + видео кодек Theora + аудио кодек Vorbis</b>. Как правило, формат называется "Ogg Theora". Все кодеки и контейнер в этом варианте с открытым исходным кодом и без патентных или лицензионных ограничений. </li>
+            
+            <li><b>Контейнер WebM + видео кодек VP8 + аудио кодек Vorbis</b>. "WebM" открытый формат мультимедиа, представленный компанией на конференции Google I/O 19 мая 2010 года. Формат не требует лицензионных отчислений, основан на открытых видео кодеках VP8 и VP9, аудио кодеке Vorbis и подмножестве медиа контейнера Matroska. Новый формат вместе с VP8 призван заменить проприетарный стандарт H.264/MPEG-4. </li>
+        </ul>
+        <pre><span class="tag">&lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+                &lt;head&gt;
+                    &lt;title&gt;</span>Пример использования тега &lt;video&gt;<span class="tag">&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;h1&gt;</span>Видео в HTML5<span class="tag">&lt;/h1&gt;
+                    &lt;video</span> <span class="att">width = </span><span class="zna">"320" </span><span class="att">height = </span><span class="zna">"240" </span><span class="att">poster = </span><span class="zna">"10.jpg" </span><span class="att">controls</span><span class="tag">&gt;
+                        &lt;source</span> <span class="att">src = </span><span class="zna">"123.mp4" </span><span class="att">type = </span><span class="zna">"video/mp4"</span><span class="tag">&gt;
+                        &lt;source</span> <span class="att">src = </span><span class="zna">"123.ogg" </span><span class="att">type = </span><span class="zna">"video/ogg"</span><span class="tag">&gt;
+                        &lt;track</span> <span class="att">src = </span><span class="zna">"sub_en.vtt"</span> <span class="att">kind = </span><span class="zna">"subtitles" </span><span class="att">srclang = </span><span class="zna">"en"</span> <span class="att">label = </span><span class="zna">"English"</span><span class="tag">&gt;
+                        &lt;track</span> <span class="att">src = </span><span class="zna">"sub_ru.vtt" </span><span class="att">kind = </span><span class="zna">"subtitles" </span><span class="att">srclang = </span><span class="zna">"ru" </span><span class="att">label = </span><span class="zna">"Russian" </span><span class="att">default</span><span class="tag">&gt;</span>
+                        Ваш браузер не поддерживает видео тег.
+                    <span class="tag">&lt;/video&gt;
+                &lt;/body&gt;
+            &lt;/html&gt;</span>
+        </pre>
+        <p>В этом примере мы:</p>
+        <p>Добавили на страницу видео (тег <span class='tag'>&lt;video&gt;</span>) шириной <b>320</b> пикселей и высотой <b>240</b> пикселей, атрибут <span class='att'>poster</span> - указывает местоположение изображения, которое пользователь будет видеть перед запуском видео (если атрибут не указан, то отображается первый кадр виео.</p>
+        <p>Атрибутом <span class='att'>control</span> добавили отображение встроенных элементов управления мультимедийным файлом (кнопка воспроизведения / паузы, регулятор, позволяющий перейти к определённому фрагменту ролика, а также регулятор уровня громкости).</p>
+        <p>Использовали тег <span class='tag'>&lt;source&gt;</span>, который позволяет указать несколько вариантов формата видео (в этом случае браузер сможет выбрать подходящий формат для загрузки  и воспроизведения ). Чтобы повысить эффективность работы клиента, при использовании нескольких форматов нужно указывать в тегах <span class='tag'>&lt;source&gt;</span> атрибут <span class='att'>type</span> (MIME-типы для видео):</p>
+        <table class="tableTag"> 
+            <tbody><tr>
+            <th>Формат</th> <th> MIME-типы </th>
+            </tr> 
+            <tr> 
+             <th>MP4</th><td>video/mp4</td>
+            </tr>
+            <tr> 
+             <th>Ogg</th><td>video/ogg</td>
+            </tr>
+            <tr> 
+             <th>WebM</th><td>video/webm</td>
+            </tr>
+            </tbody>
+        </table>
+        <p>Благодаря тегу <span class='tag'>&lt;track&gt;</span> добавили субтитры к видео:</p>
+        <ul>
+            <li>Добавили путь к файлу атрибутом <span class='att'>src</span>.</li>
+            <li>Установили тип дорожки - субтитры <span class='att'>kind =</span><span class='zna'>"subtitles"</span>(данный параметр устанавливается по умолчанию, также доступны навигационные параметры, метаданные и параметры для людей с ограниченными возможностями).</li>
+            <li>Установили язые дорожки <span class='att'>srclang = </span><span class='zna'>"ru"</span>.</li>
+            <li>Отобразили названия двух дорожек <span class='att'>label = </span><span class='zna'>"English",</span><span class='att'> label = </span><span class='zna'>"Russian"</span>.</li>
+            <li>Выбрали дорожку по умолчанию атрибутом <span class='att'>default</span>.</li>
+        </ul>
+        <figure>
+            <iframe width='350' height='350' src="https://basicweb.ru/html/primer/50.php"></iframe>
+            <figcaption>Добавление видео с субтитрами на страницу (HTML тег &lt;video&gt;).</figcaption>
+        </figure>
+        <p>Допускается добавлять видео файлы с использованием упрощенного синтаксиса (без использования тега <span class='tag'>&lt;source&gt;</span>), но такая запись будет актуальна если все браузеры поддерживают данный формат видео:</p>
+        <pre><span class="tag">&lt;video <span class="att">src = </span><span class="zna">"123.mp4"</span> <span class="att">width = </span><span class="zna">"320"</span> <span class="att">height = </span><span class="zna">"240" </span><span class="att">poster = </span><span class="zna">"10.jpg" </span><span class="att">controls</span>&gt;</span>
+            Ваш браузер не поддерживает этот видео формат. <span class="com">&lt;!--Текст будет виден только тем у кого браузер не поддерживает этот видео формат--&gt;</span>
+            Вы можете скачать этот файл по <u>ссылке</u>.
+        <span class="tag">&lt;/video&gt;</span>
+        </pre><br>
+        <p>Прочие, часто используемвые атрибуты элемента <span class='tag'>&lt;video&gt;</span>:</p>
+        <table class="tableTag"> 
+            <tbody><tr>
+            <th style="width:20%">Атрибут</th><th style="width:80%">Значение атрибута</th>
+            </tr> 
+            <tr> 
+             <td> <span class="att">autoplay</span></td><td>Задает автоматическое воспроизведение видеоролика (старайтесь не использовать этот атрибут без необходимости – раздражает, когда за тебя решают, когда должно начаться воспроизведение видео контента).</td>
+            </tr>
+            <tr> 
+             <td> <span class="att">loop</span></td><td>Зацикливает воспроизведение видеоролика (наша песня хороша – начинай сначала).</td>
+            </tr>
+            <tr> 
+             <td> <span class="att">muted</span></td><td>Воспроизведение видеоролика с отключенным звуком.</td>
+            </tr>
+            </tbody>
+        </table>
+        <h2>Добавление аудио на HTML страницу</h2>
+        <table class="tableTag"> 
+            <tbody><tr>
+            <th>Браузер</th> <th> MP3</th> <th>Wav</th><th> Ogg </th>
+            </tr> 
+            <tr> 
+             <th>Chrome</th><td class="tyes">ДА</td><td class="tyes">ДА</td><td class="tyes">ДА</td>
+            </tr>
+            <tr> 
+             <th>Firefox </th><td class="tyes">ДА</td><td class="tyes">ДА</td><td class="tyes">ДА</td>
+            </tr>
+            <tr> 
+             <th>Opera </th><td class="tyes">ДА</td><td class="tyes">ДА</td><td class="tyes">ДА</td>
+            </tr>
+            <tr> 
+             <th>Safari </th><td class="tyes">ДА</td><td class="tyes">ДА</td><td class="tno">НЕТ</td>
+            </tr>
+            <tr> 
+             <th>IE</th><td class="tyes">ДА</td><td class="tno">НЕТ</td><td class="tno">НЕТ</td>
+            </tr>
+            <tr>
+            <th>Edge</th><td class="tyes">ДА</td><td class="tyes">ДА</td><td class="tno">НЕТ</td>
+            </tr>
+            </tbody>
+        </table>
+        <p>Элемент <span class='tag'>&lt;audio&gt;</span> использует те же атрибуты, что и элемент <span class='tag'>&lt;video&gt;</span>, за исключением атрибутов <span class='att'>width</span>,<span class='att'>height</span> и <span class='att'>poster</span>.</p>
+        <pre><span class="tag">&lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+                &lt;head&gt;
+                    &lt;title&gt;</span>Аудио в HTML5<span class="tag">&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;h1&gt;</span>Аудио в HTML5<span class="tag">&lt;/h1&gt;
+                    &lt;audio</span> <span class="att">controls</span><span class="tag">&gt;
+                        &lt;source </span><span class="att">src = </span><span class="zna">"sound.mp3"</span> <span class="att">type = </span><span class="zna">"audio/mp3"</span><span class="tag">&gt;
+                        &lt;source </span><span class="att">src = </span><span class="zna">"sound.ogg"</span> <span class="att">type = </span><span class="zna">"audio/ogg"</span><span class="tag">&gt;</span>
+                        Ваш браузер не поддерживает этот аудио формат. <span class="com">&lt;!--Текст будет виден только тем у кого браузер не поддерживает этот аудио формат--&gt;</span>
+                        Вы можете скачать этот файл по ссылке ниже:
+                        <span class="tag">&lt;p&gt;&lt;a <span class="att">href = </span><span class="zna">"sound.rar"</span>&gt;</span>Скачать<span class="tag">&lt;/a&gt;&lt;/p&gt;
+                    <span class="tag">&lt;/audio&gt;
+                &lt;/body&gt;
+            &lt;/html&gt;</span>
+            </span>
+        </pre>
+        <table class="tableTag"> 
+            <tbody><tr>
+            <th>Формат</th> <th> MIME-типы </th>
+            </tr> 
+            <tr> 
+             <th>MP3</th><td> audio/mpeg </td>
+            </tr>
+            <tr> 
+             <th>Ogg</th><td> audio/ogg </td>
+            </tr>
+            <tr> 
+             <th>Wav</th><td> audio/wav </td>
+            </tr>
+            </tbody>
+        </table>
+        <figure>
+            <iframe width='350' height='200' src="https://basicweb.ru/html/primer/51.php"></iframe>
+            <figcaption>Добавление аудио на страницу</figcaption>
+        </figure>
+        <p>Допускается добавлять аудио файлы с использованием урощённого синтаксиса (без использования тега  <span class='tag'>&lt;source&gt;</span>), но такая запись будет актуально если все браузеры поддерживают данный формат аудио:</p>
+        <pre><span class="tag">&lt;audio <span class="att">src = </span><span class="zna">"sound.mp3"</span> <span class="att">type = </span><span class="zna">"audio/mp3"</span> <span class="att">controls</span>&gt;</span>
+            Ваш браузер не поддерживает этот аудио формат. <span class="com">&lt;!--Текст будет виден только тем у кого браузер не поддерживает этот аудио формат--&gt;</span>
+            Вы можете скачать этот файл по <u>ссылке</u>. 
+        <span class="tag">&lt;/audio&gt;</span>
+        </pre>
+    </article>
+</body>
+</html>
